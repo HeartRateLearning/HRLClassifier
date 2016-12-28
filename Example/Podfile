@@ -1,0 +1,6 @@
+use_frameworks!
+target 'HRLClassifier_Tests' do
+  pod 'HRLClassifier', :path => '../'
+  
+  
+end
