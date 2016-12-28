@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		E2A90DD1866D88145DCB96DE /* Pods_HRLClassifier_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BEB8A9CC53CD0DD5522F997 /* Pods_HRLClassifier_Tests.framework */; };
+		FFA999281E1466EF00BFDD09 /* DataFrameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA999251E1466EF00BFDD09 /* DataFrameTest.swift */; };
+		FFA999291E1466EF00BFDD09 /* RecordTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA999261E1466EF00BFDD09 /* RecordTest.swift */; };
+		FFA9992A1E1466EF00BFDD09 /* WorkingOutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA999271E1466EF00BFDD09 /* WorkingOutTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,11 +18,13 @@
 		5FF425E95BBD0F396AA00D06 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* HRLClassifier_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HRLClassifier_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6CBE9ACD760F69591522B5C0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		A3CD24E10649C2071C8E1F44 /* HRLClassifier.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HRLClassifier.podspec; path = ../HRLClassifier.podspec; sourceTree = "<group>"; };
 		BFF68A35DA9BC3940B685B15 /* Pods-HRLClassifier_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRLClassifier_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HRLClassifier_Tests/Pods-HRLClassifier_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		FE25BEE8145C8B28AF2C3C5C /* Pods-HRLClassifier_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRLClassifier_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HRLClassifier_Tests/Pods-HRLClassifier_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		FFA999251E1466EF00BFDD09 /* DataFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFrameTest.swift; sourceTree = "<group>"; };
+		FFA999261E1466EF00BFDD09 /* RecordTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTest.swift; sourceTree = "<group>"; };
+		FFA999271E1466EF00BFDD09 /* WorkingOutTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingOutTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +78,9 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				FFA999251E1466EF00BFDD09 /* DataFrameTest.swift */,
+				FFA999261E1466EF00BFDD09 /* RecordTest.swift */,
+				FFA999271E1466EF00BFDD09 /* WorkingOutTest.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -219,7 +225,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				FFA9992A1E1466EF00BFDD09 /* WorkingOutTest.swift in Sources */,
+				FFA999281E1466EF00BFDD09 /* DataFrameTest.swift in Sources */,
+				FFA999291E1466EF00BFDD09 /* RecordTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
