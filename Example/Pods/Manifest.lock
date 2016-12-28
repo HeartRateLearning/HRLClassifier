@@ -1,0 +1,16 @@
+PODS:
+  - HRLClassifier (0.1.0)
+
+DEPENDENCIES:
+  - HRLClassifier (from `../`)
+
+EXTERNAL SOURCES:
+  HRLClassifier:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  HRLClassifier: 4493576a8e534d22194499d996f1ee86e17f4f1c
+
+PODFILE CHECKSUM: 17d030c56d744624ca7ae14883b5424ddbe5565b
+
+COCOAPODS: 1.1.1

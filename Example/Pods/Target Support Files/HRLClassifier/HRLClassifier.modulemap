@@ -1,0 +1,6 @@
+framework module HRLClassifier {
+  umbrella header "HRLClassifier-umbrella.h"
+
+  export *
+  module * { export * }
+}
