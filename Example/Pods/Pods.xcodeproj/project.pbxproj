@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A9FA17A92F146F7893A663A4C1773A7 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A6F9AFCD41BF0E3DE426A7D3043E2 /* ReplaceMe.swift */; };
 		34D3FCA0C276445B17AF0EF4832353BA /* Pods-HRLClassifier_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C1F3C08FB3B6D61A379315CB133ABF /* Pods-HRLClassifier_Tests-dummy.m */; };
 		43449BCFF326C2ED391B3E9658DE2CA8 /* HRLClassifier-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C49046CABB679F01C5DB3CA2A3D1D48 /* HRLClassifier-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4A70B31DCA8A8F96FC89BAD6D1329AD5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		866CA36C4CCEAEA8000ACCB9AF6DB76C /* HRLClassifier-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F589694E915AEF9D48512CDFB758470 /* HRLClassifier-dummy.m */; };
 		9215F7403C7B577E8F5EFC0AB46D027B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		B7EAB9F18E91BAEFFFEB773C52571F6C /* Pods-HRLClassifier_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DCA2BFB2F4657766B9836665C644A8DB /* Pods-HRLClassifier_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FF28CC821E146136003FCD71 /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF28CC7E1E146136003FCD71 /* Classifier.swift */; };
+		FF28CC831E146136003FCD71 /* DataFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF28CC7F1E146136003FCD71 /* DataFrame.swift */; };
+		FF28CC841E146136003FCD71 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF28CC801E146136003FCD71 /* Record.swift */; };
+		FF28CC851E146136003FCD71 /* WorkingOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF28CC811E146136003FCD71 /* WorkingOut.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,20 +37,23 @@
 		4C49046CABB679F01C5DB3CA2A3D1D48 /* HRLClassifier-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HRLClassifier-umbrella.h"; sourceTree = "<group>"; };
 		50C1F3C08FB3B6D61A379315CB133ABF /* Pods-HRLClassifier_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HRLClassifier_Tests-dummy.m"; sourceTree = "<group>"; };
 		550871F26EF67587A3B10C2166A3C886 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		75FB605267F0B83FD0F22DA2C6C166B7 /* Pods_HRLClassifier_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HRLClassifier_Tests.framework; path = "Pods-HRLClassifier_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7DA2C09FECA1D91FF864FC4FDE64EDAE /* HRLClassifier.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = HRLClassifier.modulemap; sourceTree = "<group>"; };
+		75FB605267F0B83FD0F22DA2C6C166B7 /* Pods_HRLClassifier_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HRLClassifier_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DA2C09FECA1D91FF864FC4FDE64EDAE /* HRLClassifier.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = HRLClassifier.modulemap; sourceTree = "<group>"; };
 		7F589694E915AEF9D48512CDFB758470 /* HRLClassifier-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HRLClassifier-dummy.m"; sourceTree = "<group>"; };
 		8B7C89E56856C9590B0641628E01AA30 /* HRLClassifier-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HRLClassifier-prefix.pch"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A5AF732E8F5D4EB48652BC93D99FF0B3 /* Pods-HRLClassifier_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HRLClassifier_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		B7CAC80E904854D0EE368D4FA39A1037 /* Pods-HRLClassifier_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HRLClassifier_Tests-resources.sh"; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CF9A6F9AFCD41BF0E3DE426A7D3043E2 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
-		DC4D8979A51E7DDD41122AA6AB8A4913 /* HRLClassifier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HRLClassifier.framework; path = HRLClassifier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC4D8979A51E7DDD41122AA6AB8A4913 /* HRLClassifier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HRLClassifier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA2BFB2F4657766B9836665C644A8DB /* Pods-HRLClassifier_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HRLClassifier_Tests-umbrella.h"; sourceTree = "<group>"; };
-		E86047741B6FA71CEF262093FDE0F1CE /* Pods-HRLClassifier_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-HRLClassifier_Tests.modulemap"; sourceTree = "<group>"; };
+		E86047741B6FA71CEF262093FDE0F1CE /* Pods-HRLClassifier_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-HRLClassifier_Tests.modulemap"; sourceTree = "<group>"; };
 		E9472BC84B7ED7D85C6C7664C3F9793B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFB265199E10D8907B9900E46F49E22B /* Pods-HRLClassifier_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HRLClassifier_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		FF28CC7E1E146136003FCD71 /* Classifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
+		FF28CC7F1E146136003FCD71 /* DataFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFrame.swift; sourceTree = "<group>"; };
+		FF28CC801E146136003FCD71 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		FF28CC811E146136003FCD71 /* WorkingOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingOut.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,9 +88,11 @@
 		49D7BABDBFF2CECE5B567191146F3104 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				CF9A6F9AFCD41BF0E3DE426A7D3043E2 /* ReplaceMe.swift */,
+				FF28CC7E1E146136003FCD71 /* Classifier.swift */,
+				FF28CC7F1E146136003FCD71 /* DataFrame.swift */,
+				FF28CC801E146136003FCD71 /* Record.swift */,
+				FF28CC811E146136003FCD71 /* WorkingOut.swift */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -178,7 +186,6 @@
 			children = (
 				49D7BABDBFF2CECE5B567191146F3104 /* Classes */,
 			);
-			name = HRLClassifier;
 			path = HRLClassifier;
 			sourceTree = "<group>";
 		};
@@ -271,8 +278,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF28CC851E146136003FCD71 /* WorkingOut.swift in Sources */,
 				866CA36C4CCEAEA8000ACCB9AF6DB76C /* HRLClassifier-dummy.m in Sources */,
-				2A9FA17A92F146F7893A663A4C1773A7 /* ReplaceMe.swift in Sources */,
+				FF28CC821E146136003FCD71 /* Classifier.swift in Sources */,
+				FF28CC841E146136003FCD71 /* Record.swift in Sources */,
+				FF28CC831E146136003FCD71 /* DataFrame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
