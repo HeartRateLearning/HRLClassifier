@@ -11,7 +11,7 @@ import HRLAlgorithms
 
 /// A `DataFrame` contains all the necessary data to train a `Classifier`:
 /// heart rates at different moments and if the user was working out ot not.
-public class DataFrame: NSObject {
+class DataFrame: NSObject {
     fileprivate var records: [Record] = []
     fileprivate var classes: [UInt] = []
 
@@ -23,7 +23,7 @@ public class DataFrame: NSObject {
             - record: a `Record` instance
             - isWorkingOut: if the user was working out or not at the moment `record` was recorded
      */
-    public func append(record: Record, isWorkingOut: Bool) {
+    func append(record: Record, isWorkingOut: Bool) {
         records.append(record)
         classes.append(WorkingOut(isWorkingOut).rawValue)
     }
