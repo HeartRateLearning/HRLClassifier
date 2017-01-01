@@ -20,10 +20,14 @@ class WorkingOutTest: XCTestCase {
     }
 
     func testWorkingOutTrue_init_returnBoolTrue() {
-        XCTAssertTrue(Bool(WorkingOut.true))
+        XCTAssertTrue(Bool(WorkingOut.true)!)
     }
 
     func testWorkingOutFalse_init_returnBoolFalse() {
-        XCTAssertFalse(Bool(WorkingOut.false))
+        XCTAssertFalse(Bool(WorkingOut.false)!)
+    }
+
+    func testWorkingOutUnknown_init_returnNil() {
+        XCTAssertNil(Bool(WorkingOut.unknown))
     }
 }

@@ -15,8 +15,8 @@
 		B7EAB9F18E91BAEFFFEB773C52571F6C /* Pods-HRLClassifier_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DCA2BFB2F4657766B9836665C644A8DB /* Pods-HRLClassifier_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FF28CC821E146136003FCD71 /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF28CC7E1E146136003FCD71 /* Classifier.swift */; };
 		FF28CC841E146136003FCD71 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF28CC801E146136003FCD71 /* Record.swift */; };
+		FF339EBF1E19A2A300E6DAA5 /* WorkingOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF339EBE1E19A2A300E6DAA5 /* WorkingOut.swift */; };
 		FFDCAC6D1E182A48003608C1 /* DataFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCAC6B1E182A48003608C1 /* DataFrame.swift */; };
-		FFDCAC6E1E182A48003608C1 /* WorkingOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCAC6C1E182A48003608C1 /* WorkingOut.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +52,8 @@
 		EFB265199E10D8907B9900E46F49E22B /* Pods-HRLClassifier_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HRLClassifier_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		FF28CC7E1E146136003FCD71 /* Classifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
 		FF28CC801E146136003FCD71 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		FF339EBE1E19A2A300E6DAA5 /* WorkingOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingOut.swift; sourceTree = "<group>"; };
 		FFDCAC6B1E182A48003608C1 /* DataFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFrame.swift; sourceTree = "<group>"; };
-		FFDCAC6C1E182A48003608C1 /* WorkingOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingOut.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +91,7 @@
 				FFDCAC6A1E182A36003608C1 /* Internal */,
 				FF28CC7E1E146136003FCD71 /* Classifier.swift */,
 				FF28CC801E146136003FCD71 /* Record.swift */,
+				FF339EBE1E19A2A300E6DAA5 /* WorkingOut.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -192,7 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				FFDCAC6B1E182A48003608C1 /* DataFrame.swift */,
-				FFDCAC6C1E182A48003608C1 /* WorkingOut.swift */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
@@ -286,7 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFDCAC6E1E182A48003608C1 /* WorkingOut.swift in Sources */,
+				FF339EBF1E19A2A300E6DAA5 /* WorkingOut.swift in Sources */,
 				866CA36C4CCEAEA8000ACCB9AF6DB76C /* HRLClassifier-dummy.m in Sources */,
 				FF28CC821E146136003FCD71 /* Classifier.swift in Sources */,
 				FF28CC841E146136003FCD71 /* Record.swift in Sources */,

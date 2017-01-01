@@ -49,12 +49,11 @@ public class Classifier {
 
         - Parameter record: A `Record` instance
      
-        - Returns: `true` is the `Classifier` estimates the user was working out.
+        - Returns: `WorkingOut.true` only if the `Classifier` estimates the user was working out.
      */
-    public func predictedWorkingOut(for record:Record) -> Bool {
+    public func predictedWorkingOut(for record:Record) -> WorkingOut {
         let predictedClass = classifier.predictClass(for: record)
-        let workingOut = WorkingOut(rawValue: predictedClass)!
 
-        return Bool(workingOut)
+        return WorkingOut(rawValue: predictedClass)!
     }
 }

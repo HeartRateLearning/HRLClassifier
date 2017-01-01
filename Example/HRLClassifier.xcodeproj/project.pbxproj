@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		E2A90DD1866D88145DCB96DE /* Pods_HRLClassifier_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BEB8A9CC53CD0DD5522F997 /* Pods_HRLClassifier_Tests.framework */; };
+		FF339EBD1E19A29700E6DAA5 /* WorkingOutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF339EBC1E19A29700E6DAA5 /* WorkingOutTest.swift */; };
 		FFA999291E1466EF00BFDD09 /* RecordTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA999261E1466EF00BFDD09 /* RecordTest.swift */; };
 		FFDCAC681E1829E9003608C1 /* DataFrameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCAC661E1829E9003608C1 /* DataFrameTest.swift */; };
-		FFDCAC691E1829E9003608C1 /* WorkingOutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCAC671E1829E9003608C1 /* WorkingOutTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,9 +22,9 @@
 		A3CD24E10649C2071C8E1F44 /* HRLClassifier.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HRLClassifier.podspec; path = ../HRLClassifier.podspec; sourceTree = "<group>"; };
 		BFF68A35DA9BC3940B685B15 /* Pods-HRLClassifier_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRLClassifier_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HRLClassifier_Tests/Pods-HRLClassifier_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		FE25BEE8145C8B28AF2C3C5C /* Pods-HRLClassifier_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRLClassifier_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HRLClassifier_Tests/Pods-HRLClassifier_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		FF339EBC1E19A29700E6DAA5 /* WorkingOutTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingOutTest.swift; sourceTree = "<group>"; };
 		FFA999261E1466EF00BFDD09 /* RecordTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTest.swift; sourceTree = "<group>"; };
 		FFDCAC661E1829E9003608C1 /* DataFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFrameTest.swift; sourceTree = "<group>"; };
-		FFDCAC671E1829E9003608C1 /* WorkingOutTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingOutTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +80,7 @@
 			children = (
 				FFDCAC651E1829CA003608C1 /* Internal */,
 				FFA999261E1466EF00BFDD09 /* RecordTest.swift */,
+				FF339EBC1E19A29700E6DAA5 /* WorkingOutTest.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -107,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				FFDCAC661E1829E9003608C1 /* DataFrameTest.swift */,
-				FFDCAC671E1829E9003608C1 /* WorkingOutTest.swift */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
@@ -235,7 +235,7 @@
 			files = (
 				FFA999291E1466EF00BFDD09 /* RecordTest.swift in Sources */,
 				FFDCAC681E1829E9003608C1 /* DataFrameTest.swift in Sources */,
-				FFDCAC691E1829E9003608C1 /* WorkingOutTest.swift in Sources */,
+				FF339EBD1E19A29700E6DAA5 /* WorkingOutTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,7 +27,7 @@ class DataFrameTest: XCTestCase {
         XCTAssertEqual(dataFrame.columnCount(), 0)
     }
 
-    func testDataFrameWithAppendedWorkingOutToTrue_classForRow_returnOne() {
+    func testDataFrameWithAppendedWorkingOutToTrue_classForRow_returnWorkingOutTrue() {
         // given
         let dataFrame = DataFrame()
         dataFrame.append(record: anyRecord(), isWorkingOut: true)
@@ -36,10 +36,10 @@ class DataFrameTest: XCTestCase {
         let thisClass = dataFrame.class(forRow: 0)
 
         // then
-        XCTAssertEqual(thisClass, 1)
+        XCTAssertEqual(thisClass, WorkingOut.true.rawValue)
     }
 
-    func testDataFrameWithAppendedWorkingOutToFalse_classForRow_returnZero() {
+    func testDataFrameWithAppendedWorkingOutToFalse_classForRow_returnWorkingOutFalse() {
         // given
         let dataFrame = DataFrame()
         dataFrame.append(record: anyRecord(), isWorkingOut: false)
@@ -48,7 +48,7 @@ class DataFrameTest: XCTestCase {
         let thisClass = dataFrame.class(forRow: 0)
 
         // then
-        XCTAssertEqual(thisClass, 0)
+        XCTAssertEqual(thisClass, WorkingOut.false.rawValue)
     }
 }
 
