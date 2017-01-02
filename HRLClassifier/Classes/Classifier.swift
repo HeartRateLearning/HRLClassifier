@@ -11,7 +11,9 @@ import HRLAlgorithms
 
 /// Train a `Classifier` with a `Dataframe` and then pass it a `Record`
 /// to predict if a person was working out or not.
-public class Classifier {
+final public class Classifier {
+    public typealias TrainingData = (record: Record, isWorkingOut: Bool)
+
     private let dataFrame = DataFrame()
     private let classifier = HRLKNNClassifier()
 
@@ -29,8 +31,8 @@ public class Classifier {
             - record: a `Record` instance
             - isWorkingOut: if the user was working out or not at the moment `record` was recorded
      */
-    public func addTrainingData(record: Record, isWorkingOut: Bool) {
-        dataFrame.append(record: record, isWorkingOut: isWorkingOut)
+    public func add(trainingData: TrainingData) {
+        dataFrame.append(record: trainingData.record, isWorkingOut: trainingData.isWorkingOut)
     }
 
     /**

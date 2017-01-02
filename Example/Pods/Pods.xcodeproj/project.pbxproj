@@ -16,6 +16,13 @@
 		FF28CC821E146136003FCD71 /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF28CC7E1E146136003FCD71 /* Classifier.swift */; };
 		FF28CC841E146136003FCD71 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF28CC801E146136003FCD71 /* Record.swift */; };
 		FF339EBF1E19A2A300E6DAA5 /* WorkingOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF339EBE1E19A2A300E6DAA5 /* WorkingOut.swift */; };
+		FF3EAB971E19D31F00394AF1 /* AddingTrainingDataState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3EAB901E19D31F00394AF1 /* AddingTrainingDataState.swift */; };
+		FF3EAB981E19D31F00394AF1 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3EAB911E19D31F00394AF1 /* Context.swift */; };
+		FF3EAB991E19D31F00394AF1 /* ContextDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3EAB921E19D31F00394AF1 /* ContextDelegate.swift */; };
+		FF3EAB9A1E19D31F00394AF1 /* PredictingWorkingOutState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3EAB931E19D31F00394AF1 /* PredictingWorkingOutState.swift */; };
+		FF3EAB9B1E19D31F00394AF1 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3EAB941E19D31F00394AF1 /* State.swift */; };
+		FF3EAB9C1E19D31F00394AF1 /* StateChanging.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3EAB951E19D31F00394AF1 /* StateChanging.swift */; };
+		FF3EAB9D1E19D31F00394AF1 /* StateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3EAB961E19D31F00394AF1 /* StateDelegate.swift */; };
 		FFDCAC6D1E182A48003608C1 /* DataFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCAC6B1E182A48003608C1 /* DataFrame.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +60,13 @@
 		FF28CC7E1E146136003FCD71 /* Classifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
 		FF28CC801E146136003FCD71 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		FF339EBE1E19A2A300E6DAA5 /* WorkingOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingOut.swift; sourceTree = "<group>"; };
+		FF3EAB901E19D31F00394AF1 /* AddingTrainingDataState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingTrainingDataState.swift; sourceTree = "<group>"; };
+		FF3EAB911E19D31F00394AF1 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		FF3EAB921E19D31F00394AF1 /* ContextDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextDelegate.swift; sourceTree = "<group>"; };
+		FF3EAB931E19D31F00394AF1 /* PredictingWorkingOutState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictingWorkingOutState.swift; sourceTree = "<group>"; };
+		FF3EAB941E19D31F00394AF1 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		FF3EAB951E19D31F00394AF1 /* StateChanging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateChanging.swift; sourceTree = "<group>"; };
+		FF3EAB961E19D31F00394AF1 /* StateDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateDelegate.swift; sourceTree = "<group>"; };
 		FFDCAC6B1E182A48003608C1 /* DataFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFrame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,9 +203,24 @@
 			path = HRLClassifier;
 			sourceTree = "<group>";
 		};
+		FF3EAB8F1E19D2F900394AF1 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				FF3EAB901E19D31F00394AF1 /* AddingTrainingDataState.swift */,
+				FF3EAB911E19D31F00394AF1 /* Context.swift */,
+				FF3EAB921E19D31F00394AF1 /* ContextDelegate.swift */,
+				FF3EAB931E19D31F00394AF1 /* PredictingWorkingOutState.swift */,
+				FF3EAB941E19D31F00394AF1 /* State.swift */,
+				FF3EAB951E19D31F00394AF1 /* StateChanging.swift */,
+				FF3EAB961E19D31F00394AF1 /* StateDelegate.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
 		FFDCAC6A1E182A36003608C1 /* Internal */ = {
 			isa = PBXGroup;
 			children = (
+				FF3EAB8F1E19D2F900394AF1 /* State */,
 				FFDCAC6B1E182A48003608C1 /* DataFrame.swift */,
 			);
 			path = Internal;
@@ -286,11 +315,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF3EAB991E19D31F00394AF1 /* ContextDelegate.swift in Sources */,
+				FF3EAB971E19D31F00394AF1 /* AddingTrainingDataState.swift in Sources */,
+				FF3EAB9D1E19D31F00394AF1 /* StateDelegate.swift in Sources */,
 				FF339EBF1E19A2A300E6DAA5 /* WorkingOut.swift in Sources */,
+				FF3EAB9B1E19D31F00394AF1 /* State.swift in Sources */,
 				866CA36C4CCEAEA8000ACCB9AF6DB76C /* HRLClassifier-dummy.m in Sources */,
+				FF3EAB9A1E19D31F00394AF1 /* PredictingWorkingOutState.swift in Sources */,
+				FF3EAB981E19D31F00394AF1 /* Context.swift in Sources */,
 				FF28CC821E146136003FCD71 /* Classifier.swift in Sources */,
 				FF28CC841E146136003FCD71 /* Record.swift in Sources */,
 				FFDCAC6D1E182A48003608C1 /* DataFrame.swift in Sources */,
+				FF3EAB9C1E19D31F00394AF1 /* StateChanging.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

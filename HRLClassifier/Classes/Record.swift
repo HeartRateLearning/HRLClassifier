@@ -10,7 +10,7 @@ import Foundation
 import HRLAlgorithms
 
 /// A heart rate record as expected by a `Classifier` or a `DataFrame`.
-public class Record: NSObject {
+final public class Record: NSObject {
     fileprivate let values: [HRLValue]
 
     fileprivate static let calendar = defaultCalendar()
