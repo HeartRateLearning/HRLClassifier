@@ -22,7 +22,7 @@ extension PredictingWorkingOutState: State {
         return prediction
     }
 
-    func rollbackClassifider() {
+    func rollbackClassifier() {
         delegate?.stateRollbackClassifier(self)
 
         stateChanger?.changeToAddingTrainingData()

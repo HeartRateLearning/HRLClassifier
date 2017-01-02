@@ -20,8 +20,8 @@ final class DataFrame: NSObject {
         moment the `record` was recorded.
      
         - Parameteres:
-            - record: a `Record` instance
-            - isWorkingOut: if the user was working out or not at the moment `record` was recorded
+            - record: a `Record` instance.
+            - isWorkingOut: if the user was working out or not at the moment `record` was recorded.
      */
     func append(record: Record, isWorkingOut: Bool) {
         records.append(record)

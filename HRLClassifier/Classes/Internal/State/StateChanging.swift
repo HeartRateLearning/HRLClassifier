@@ -8,7 +8,13 @@
 
 import Foundation
 
+/// Use this protocol to request a change of state.
+/// Notice that it is a Class-Only Protocol, a struct would be copied on assigment to
+/// a property.
 protocol StateChanging: class {
+    /// Change to: Adding Training Data.
     func changeToAddingTrainingData()
+
+    /// Change to: Predicting Working Out.
     func changeToPredictingWorkingOut()
 }

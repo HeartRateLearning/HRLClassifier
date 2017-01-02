@@ -18,18 +18,16 @@ final public class Classifier {
     private let classifier = HRLKNNClassifier()
 
     /**
-        Initializes a new `Classifier`
+        Initializes a new `Classifier`.
      
-        - Returns: a new `Classifier`
+        - Returns: a new `Classifier`.
      */
     public init() {}
 
     /**
-        Add data that will be used to train the `Classifier`
+        Add data that will be used to train the `Classifier`.
      
-        - Parameteres:
-            - record: a `Record` instance
-            - isWorkingOut: if the user was working out or not at the moment `record` was recorded
+        - Parameter trainingData: data to add.
      */
     public func add(trainingData: TrainingData) {
         dataFrame.append(record: trainingData.record, isWorkingOut: trainingData.isWorkingOut)
@@ -37,7 +35,7 @@ final public class Classifier {
 
     /**
         After adding the training data, call this method to train the `Classifier`
-        in order to prepare it to make predictions
+        in order to prepare it to make predictions.
      */
     public func train() {
         let matrix = HRLMatrix()
@@ -49,7 +47,7 @@ final public class Classifier {
     /**
         Once the `Classifier` is trained, use this method to make predictions.
 
-        - Parameter record: A `Record` instance
+        - Parameter record: a `Record` instance.
      
         - Returns: `WorkingOut.true` only if the `Classifier` estimates the user was working out.
      */

@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// This class control the `State` of the `Classifier`, do not reference the `State`
+/// instances directly, use this class instead.
 final class Context {
     weak var delegate: ContextDelegate?
 
@@ -18,6 +20,11 @@ final class Context {
         }
     }
 
+    /**
+        Initializes a new `Context`.
+
+        - Returns: a new `Context`.
+     */
     init() {
         state = AddingTrainingDataState()
 
@@ -27,20 +34,34 @@ final class Context {
         state.stateChanger = self
     }
 
+    /**
+        Add data that will be used to train the `Classifier`.
+
+        - Parameter trainingData: data to add.
+     */
     func add(trainingData: Classifier.TrainingData) {
         state.add(trainingData: trainingData)
     }
 
+    /// Train the `Classifier` with the trainig data provided before.
     func trainClassifier() {
         state.trainClassifier()
     }
 
+    /**
+        Return a prediction.
+
+        - Parameter record: a `Record` instance.
+
+        - Returns: `WorkingOut.true` only if the `Classifier` estimates the user was working out.
+     */
     func predictedWorkingOut(for record:Record) -> WorkingOut {
         return state.predictedWorkingOut(for: record)
     }
 
-    func rollbackClassifider() {
-        state.rollbackClassifider()
+    /// Disable predictions, more training data can be added to the `Classifier`.
+    func rollbackClassifier() {
+        state.rollbackClassifier()
     }
 }
 

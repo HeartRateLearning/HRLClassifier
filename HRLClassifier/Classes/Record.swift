@@ -19,8 +19,8 @@ final public class Record: NSObject {
         Initializes a new heart rate record.
      
         - Parameters:
-            - date: Date when the heart rate was recorded
-            - bpm: Beats Per Minute when the heart rate was recorded
+            - date: Date when the heart rate was recorded.
+            - bpm: Beats Per Minute when the heart rate was recorded.
      
         - Returns: A new heart rate record.
      */
