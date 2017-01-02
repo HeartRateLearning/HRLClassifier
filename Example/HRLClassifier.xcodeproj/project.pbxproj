@@ -11,6 +11,12 @@
 		FF339EBD1E19A29700E6DAA5 /* WorkingOutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF339EBC1E19A29700E6DAA5 /* WorkingOutTest.swift */; };
 		FFA999291E1466EF00BFDD09 /* RecordTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA999261E1466EF00BFDD09 /* RecordTest.swift */; };
 		FFDCAC681E1829E9003608C1 /* DataFrameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCAC661E1829E9003608C1 /* DataFrameTest.swift */; };
+		FFF94C181E1AFDFA00544291 /* ContextDelegateTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF94C151E1AFDFA00544291 /* ContextDelegateTestDouble.swift */; };
+		FFF94C191E1AFDFA00544291 /* StateChangingTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF94C161E1AFDFA00544291 /* StateChangingTestDouble.swift */; };
+		FFF94C1A1E1AFDFA00544291 /* StateDelegateTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF94C171E1AFDFA00544291 /* StateDelegateTestDouble.swift */; };
+		FFF94C1E1E1AFE0500544291 /* AddingTrainingDataStateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF94C1B1E1AFE0500544291 /* AddingTrainingDataStateTest.swift */; };
+		FFF94C1F1E1AFE0500544291 /* ContextTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF94C1C1E1AFE0500544291 /* ContextTest.swift */; };
+		FFF94C201E1AFE0500544291 /* PredictingWorkingOutStateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF94C1D1E1AFE0500544291 /* PredictingWorkingOutStateTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +31,12 @@
 		FF339EBC1E19A29700E6DAA5 /* WorkingOutTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingOutTest.swift; sourceTree = "<group>"; };
 		FFA999261E1466EF00BFDD09 /* RecordTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTest.swift; sourceTree = "<group>"; };
 		FFDCAC661E1829E9003608C1 /* DataFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFrameTest.swift; sourceTree = "<group>"; };
+		FFF94C151E1AFDFA00544291 /* ContextDelegateTestDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextDelegateTestDouble.swift; sourceTree = "<group>"; };
+		FFF94C161E1AFDFA00544291 /* StateChangingTestDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateChangingTestDouble.swift; sourceTree = "<group>"; };
+		FFF94C171E1AFDFA00544291 /* StateDelegateTestDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateDelegateTestDouble.swift; sourceTree = "<group>"; };
+		FFF94C1B1E1AFE0500544291 /* AddingTrainingDataStateTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingTrainingDataStateTest.swift; sourceTree = "<group>"; };
+		FFF94C1C1E1AFE0500544291 /* ContextTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextTest.swift; sourceTree = "<group>"; };
+		FFF94C1D1E1AFE0500544291 /* PredictingWorkingOutStateTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictingWorkingOutStateTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,9 +119,31 @@
 		FFDCAC651E1829CA003608C1 /* Internal */ = {
 			isa = PBXGroup;
 			children = (
+				FFF94C131E1AFDCC00544291 /* State */,
 				FFDCAC661E1829E9003608C1 /* DataFrameTest.swift */,
 			);
 			path = Internal;
+			sourceTree = "<group>";
+		};
+		FFF94C131E1AFDCC00544291 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				FFF94C141E1AFDDD00544291 /* Test Doubles */,
+				FFF94C1B1E1AFE0500544291 /* AddingTrainingDataStateTest.swift */,
+				FFF94C1C1E1AFE0500544291 /* ContextTest.swift */,
+				FFF94C1D1E1AFE0500544291 /* PredictingWorkingOutStateTest.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		FFF94C141E1AFDDD00544291 /* Test Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				FFF94C151E1AFDFA00544291 /* ContextDelegateTestDouble.swift */,
+				FFF94C161E1AFDFA00544291 /* StateChangingTestDouble.swift */,
+				FFF94C171E1AFDFA00544291 /* StateDelegateTestDouble.swift */,
+			);
+			path = "Test Doubles";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,8 +267,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFF94C201E1AFE0500544291 /* PredictingWorkingOutStateTest.swift in Sources */,
 				FFA999291E1466EF00BFDD09 /* RecordTest.swift in Sources */,
+				FFF94C1F1E1AFE0500544291 /* ContextTest.swift in Sources */,
+				FFF94C1A1E1AFDFA00544291 /* StateDelegateTestDouble.swift in Sources */,
+				FFF94C181E1AFDFA00544291 /* ContextDelegateTestDouble.swift in Sources */,
 				FFDCAC681E1829E9003608C1 /* DataFrameTest.swift in Sources */,
+				FFF94C191E1AFDFA00544291 /* StateChangingTestDouble.swift in Sources */,
+				FFF94C1E1E1AFE0500544291 /* AddingTrainingDataStateTest.swift in Sources */,
 				FF339EBD1E19A29700E6DAA5 /* WorkingOutTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

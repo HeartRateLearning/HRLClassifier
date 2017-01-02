@@ -13,7 +13,8 @@ final class Context {
 
     fileprivate var state: State {
         didSet {
-            configureState()
+            state.delegate = self
+            state.stateChanger = self
         }
     }
 
@@ -22,7 +23,8 @@ final class Context {
 
         // 'didSet' is only called when the property’s value
         // is set outside of an initialization context
-        configureState()
+        state.delegate = self
+        state.stateChanger = self
     }
 
     func add(trainingData: Classifier.TrainingData) {
@@ -79,12 +81,5 @@ extension Context: StateDelegate {
 
     func stateRollbackClassifier(_ state: State) {
         delegate?.contextRollbackClassifier(self)
-    }
-}
-
-private extension Context {
-    func configureState() {
-        state.delegate = self
-        state.stateChanger = self
     }
 }
