@@ -9,29 +9,39 @@
 import Foundation
 import HRLAlgorithms
 
-/// A `DataFrame` contains all the necessary data to train a `Classifier`:
-/// heart rates at different moments and if the user was working out ot not.
-final class DataFrame: NSObject {
+/// A `DataFrameProtocol` contains all the necessary data to train a `Classifier`:
+/// heart rates at different moments and if the user was working out or not.
+protocol DataFrameProtocol: HRLMatrixDataSource {
     /**
         Each position of `recordCountPerWeekday` represents a day of the week
-        and the value contained on each position is the number of record for that day:
+        and the value contained on each position is the number of appended
+        records for that day:
         recordCountPerWeekday[0] = number of records on Sunday,
         recordCountPerWeekday[1] = number of records on Monday,
         ...
      */
-    private(set) var recordCountPerWeekday = Array(repeating: 0, count: Constants.daysPerWeek)
-
-    fileprivate var records: [Record] = []
-    fileprivate var classes: [UInt] = []
+    var recordCountPerWeekday: [Int] { get }
 
     /**
         Append a new `record` to the dataframe and if the user `isWorkingOut` or not at the
-        moment the `record` was recorded.
-     
+        moment the `record` was created.
+
         - Parameteres:
             - record: a `Record` instance.
             - isWorkingOut: if the user was working out or not at the moment `record` was recorded.
      */
+    func append(record: Record, isWorkingOut: Bool)
+}
+
+/// Implementation of `DataFrameProtocol`
+final class DataFrame: NSObject {
+    fileprivate(set) var recordCountPerWeekday = Array(repeating: 0, count: Constants.daysPerWeek)
+
+    fileprivate var records: [Record] = []
+    fileprivate var classes: [UInt] = []
+}
+
+extension DataFrame: DataFrameProtocol {
     func append(record: Record, isWorkingOut: Bool) {
         recordCountPerWeekday[record.weekday - 1] += 1
 

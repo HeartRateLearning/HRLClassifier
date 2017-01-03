@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E2A90DD1866D88145DCB96DE /* Pods_HRLClassifier_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BEB8A9CC53CD0DD5522F997 /* Pods_HRLClassifier_Tests.framework */; };
+		FF2AB1771E1C51F50069333D /* DataFrameTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2AB1761E1C51F50069333D /* DataFrameTestDouble.swift */; };
+		FF2AB1791E1C52090069333D /* ClassifierTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2AB1781E1C52090069333D /* ClassifierTest.swift */; };
 		FF339EBD1E19A29700E6DAA5 /* WorkingOutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF339EBC1E19A29700E6DAA5 /* WorkingOutTest.swift */; };
 		FFA999291E1466EF00BFDD09 /* RecordTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA999261E1466EF00BFDD09 /* RecordTest.swift */; };
 		FFDCAC681E1829E9003608C1 /* DataFrameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCAC661E1829E9003608C1 /* DataFrameTest.swift */; };
@@ -28,6 +30,8 @@
 		A3CD24E10649C2071C8E1F44 /* HRLClassifier.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HRLClassifier.podspec; path = ../HRLClassifier.podspec; sourceTree = "<group>"; };
 		BFF68A35DA9BC3940B685B15 /* Pods-HRLClassifier_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRLClassifier_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HRLClassifier_Tests/Pods-HRLClassifier_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		FE25BEE8145C8B28AF2C3C5C /* Pods-HRLClassifier_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRLClassifier_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HRLClassifier_Tests/Pods-HRLClassifier_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		FF2AB1761E1C51F50069333D /* DataFrameTestDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFrameTestDouble.swift; sourceTree = "<group>"; };
+		FF2AB1781E1C52090069333D /* ClassifierTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifierTest.swift; sourceTree = "<group>"; };
 		FF339EBC1E19A29700E6DAA5 /* WorkingOutTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingOutTest.swift; sourceTree = "<group>"; };
 		FFA999261E1466EF00BFDD09 /* RecordTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTest.swift; sourceTree = "<group>"; };
 		FFDCAC661E1829E9003608C1 /* DataFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFrameTest.swift; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				FFDCAC651E1829CA003608C1 /* Internal */,
+				FF2AB1751E1C51BA0069333D /* Test Doubles */,
+				FF2AB1781E1C52090069333D /* ClassifierTest.swift */,
 				FFA999261E1466EF00BFDD09 /* RecordTest.swift */,
 				FF339EBC1E19A29700E6DAA5 /* WorkingOutTest.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
@@ -114,6 +120,14 @@
 				5FF425E95BBD0F396AA00D06 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		FF2AB1751E1C51BA0069333D /* Test Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				FF2AB1761E1C51F50069333D /* DataFrameTestDouble.swift */,
+			);
+			path = "Test Doubles";
 			sourceTree = "<group>";
 		};
 		FFDCAC651E1829CA003608C1 /* Internal */ = {
@@ -271,9 +285,11 @@
 				FFA999291E1466EF00BFDD09 /* RecordTest.swift in Sources */,
 				FFF94C1F1E1AFE0500544291 /* ContextTest.swift in Sources */,
 				FFF94C1A1E1AFDFA00544291 /* StateDelegateTestDouble.swift in Sources */,
+				FF2AB1771E1C51F50069333D /* DataFrameTestDouble.swift in Sources */,
 				FFF94C181E1AFDFA00544291 /* ContextDelegateTestDouble.swift in Sources */,
 				FFDCAC681E1829E9003608C1 /* DataFrameTest.swift in Sources */,
 				FFF94C191E1AFDFA00544291 /* StateChangingTestDouble.swift in Sources */,
+				FF2AB1791E1C52090069333D /* ClassifierTest.swift in Sources */,
 				FFF94C1E1E1AFE0500544291 /* AddingTrainingDataStateTest.swift in Sources */,
 				FF339EBD1E19A29700E6DAA5 /* WorkingOutTest.swift in Sources */,
 			);

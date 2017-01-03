@@ -14,9 +14,16 @@ import HRLAlgorithms
 final public class Classifier {
     public typealias TrainingData = (record: Record, isWorkingOut: Bool)
 
+    /// Constants
+    enum Constants {
+        /// Minimum number of records required for each day of the week
+        /// before the `Classifier` can be trained
+        static let minRecordsPerWeekday = 80
+    }
+
     private let context: Context
 
-    fileprivate let dataFrame: DataFrame
+    fileprivate let dataFrame: DataFrameProtocol
     fileprivate let classifier: HRLKNNClassifier
 
     /**
@@ -24,12 +31,26 @@ final public class Classifier {
      
         - Returns: a new `Classifier`.
      */
-    public init() {
-        context = Context()
-        dataFrame = DataFrame()
-        classifier = HRLKNNClassifier()
+    public convenience init() {
+        self.init(context: Context(), dataFrame: DataFrame(), classifier: HRLKNNClassifier())
+    }
 
-        context.delegate = self
+    /**
+        Initializes a new `Classifier`.
+     
+        - Parameters:
+            - context: `Context` to handle the internal state of the `Classifier`
+            - dataFrame: `Dataframe` to store data that will be used to train the `Classifier`
+            - classifier: KNN classifier that, once trained, will make the predictions
+
+        - Returns: a new `Classifier`.
+     */
+    init(context: Context, dataFrame: DataFrameProtocol, classifier: HRLKNNClassifier) {
+        self.context = context
+        self.dataFrame = dataFrame
+        self.classifier = classifier
+
+        self.context.delegate = self
     }
 
     /**
@@ -83,11 +104,5 @@ extension Classifier: ContextDelegate {
         let predictedClass = classifier.predictClass(for: record)
 
         return WorkingOut(rawValue: predictedClass)!
-    }
-}
-
-private extension Classifier {
-    enum Constants {
-        static let minRecordsPerWeekday = 80
     }
 }
