@@ -67,7 +67,9 @@ extension Classifier: ContextDelegate {
     }
 
     func contextWillTrainClassifier(_ context: Context) -> Bool {
-        return true
+        let recordCountPerWeekday = dataFrame.recordCountPerWeekday
+
+        return recordCountPerWeekday.reduce(true, { $0 && ($1 >= Constants.minRecordsPerWeekday)})
     }
 
     func contextTrainClassifier(_ context: Context) {
@@ -81,5 +83,11 @@ extension Classifier: ContextDelegate {
         let predictedClass = classifier.predictClass(for: record)
 
         return WorkingOut(rawValue: predictedClass)!
+    }
+}
+
+private extension Classifier {
+    enum Constants {
+        static let minRecordsPerWeekday = 80
     }
 }

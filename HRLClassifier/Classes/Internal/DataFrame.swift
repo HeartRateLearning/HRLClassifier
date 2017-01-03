@@ -12,6 +12,15 @@ import HRLAlgorithms
 /// A `DataFrame` contains all the necessary data to train a `Classifier`:
 /// heart rates at different moments and if the user was working out ot not.
 final class DataFrame: NSObject {
+    /**
+        Each position of `recordCountPerWeekday` represents a day of the week
+        and the value contained on each position is the number of record for that day:
+        recordCountPerWeekday[0] = number of records on Sunday,
+        recordCountPerWeekday[1] = number of records on Monday,
+        ...
+     */
+    private(set) var recordCountPerWeekday = Array(repeating: 0, count: Constants.daysPerWeek)
+
     fileprivate var records: [Record] = []
     fileprivate var classes: [UInt] = []
 
@@ -24,6 +33,8 @@ final class DataFrame: NSObject {
             - isWorkingOut: if the user was working out or not at the moment `record` was recorded.
      */
     func append(record: Record, isWorkingOut: Bool) {
+        recordCountPerWeekday[record.weekday - 1] += 1
+
         records.append(record)
         classes.append(WorkingOut(isWorkingOut).rawValue)
     }
@@ -48,5 +59,11 @@ extension DataFrame: HRLMatrixDataSource {
 
     public func `class`(forRow row: HRLSize) -> UInt {
         return classes[Int(row)]
+    }
+}
+
+private extension DataFrame {
+    enum Constants {
+        static let daysPerWeek = 7
     }
 }
