@@ -99,8 +99,4 @@ extension Context: StateDelegate {
 
         return prediction
     }
-
-    func stateRollbackClassifier(_ state: State) {
-        delegate?.contextRollbackClassifier(self)
-    }
 }

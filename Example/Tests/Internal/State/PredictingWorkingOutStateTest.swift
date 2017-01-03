@@ -66,12 +66,11 @@ class PredictingWorkingOutStateTest: XCTestCase {
         XCTAssertEqual(delegate.predictWorkingOutForRecordCount, 1)
     }
 
-    func testConfiguredSut_rollbackClassifier_forwardDelegateAndChangeState() {
+    func testConfiguredSut_rollbackClassifier_changesState() {
         // when
         sut.rollbackClassifier()
 
         // then
-        XCTAssertEqual(delegate.rollbackClassifierCount, 1)
         XCTAssertEqual(stateChanger.changeToAddingTrainingDataCount, 1)
     }
 }

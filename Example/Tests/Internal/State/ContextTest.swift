@@ -78,12 +78,4 @@ class ContextTest: XCTestCase {
         // then
         XCTAssertEqual(delegate.predictWorkingOutForRecordCount, 1)
     }
-
-    func testConfiguredSut_rollbackClassifier_forwardToContextDelegate() {
-        // when
-        sut.stateRollbackClassifier(anyState)
-
-        // then
-        XCTAssertEqual(delegate.rollbackClassifierCount, 1)
-    }
 }

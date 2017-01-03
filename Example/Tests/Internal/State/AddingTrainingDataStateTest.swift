@@ -87,12 +87,11 @@ class AddingTrainingDataStateTest: XCTestCase {
         XCTAssertEqual(delegate.predictWorkingOutForRecordCount, 0)
     }
 
-    func testConfiguredSut_rollbackClassifier_neitherForwardDelegateNorChangeState() {
+    func testConfiguredSut_rollbackClassifier_doesNotChangeState() {
         // when
         sut.rollbackClassifier()
 
         // then
-        XCTAssertEqual(delegate.rollbackClassifierCount, 0)
         XCTAssertEqual(stateChanger.changeToAddingTrainingDataCount, 0)
     }
 }

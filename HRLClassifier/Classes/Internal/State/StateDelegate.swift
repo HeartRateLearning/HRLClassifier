@@ -47,11 +47,4 @@ protocol StateDelegate: class {
         - Returns: `WorkingOut.true` only if the `Classifier` estimates the user was working out.
      */
     func state(_ state: State, predictWorkingOutForRecord record: Record) -> WorkingOut
-
-    /**
-        Ask delegate to disable predictions, so the `Classifier` can accept more training data.
-
-        - Parameter state: state that triggered the event.
-     */
-    func stateRollbackClassifier(_ state: State)
 }

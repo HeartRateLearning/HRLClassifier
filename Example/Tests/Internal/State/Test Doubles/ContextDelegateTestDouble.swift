@@ -15,7 +15,6 @@ class ContextDelegateTestDouble {
     fileprivate(set) var willTrainClassifierCount = 0
     fileprivate(set) var trainClassifierCount = 0
     fileprivate(set) var predictWorkingOutForRecordCount = 0
-    fileprivate(set) var rollbackClassifierCount = 0
 
     var willTrainClassifierResult = false
     var predictWorkingOutForRecordResult = WorkingOut.unknown
@@ -40,9 +39,5 @@ extension ContextDelegateTestDouble: ContextDelegate {
         predictWorkingOutForRecordCount += 1
 
         return predictWorkingOutForRecordResult
-    }
-
-    func contextRollbackClassifier(_ context: Context) {
-        rollbackClassifierCount += 1
     }
 }

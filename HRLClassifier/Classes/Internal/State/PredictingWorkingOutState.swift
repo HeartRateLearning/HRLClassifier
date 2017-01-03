@@ -23,8 +23,6 @@ extension PredictingWorkingOutState: State {
     }
 
     func rollbackClassifier() {
-        delegate?.stateRollbackClassifier(self)
-
         stateChanger?.changeToAddingTrainingData()
     }
 }

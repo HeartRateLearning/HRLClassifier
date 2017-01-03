@@ -47,11 +47,4 @@ protocol ContextDelegate: class {
      - Returns: `WorkingOut.true` only if the `Classifier` estimates the user was working out.
      */
     func context(_ context: Context, predictWorkingOutForRecord record: Record) -> WorkingOut
-
-    /**
-        Ask delegate to disable predictions, so the `Classifier` can accept more training data.
-
-        - Parameter context: context that triggered the event.
-     */
-    func contextRollbackClassifier(_ context: Context)
 }

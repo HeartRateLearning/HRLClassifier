@@ -15,7 +15,6 @@ class StateDelegateTestDouble {
     fileprivate(set) var willTrainClassifiderCount = 0
     fileprivate(set) var trainClassifierCount = 0
     fileprivate(set) var predictWorkingOutForRecordCount = 0
-    fileprivate(set) var rollbackClassifierCount = 0
 
     var willTrainClassifierResult = false
     var predictWorkingOutForRecordResult = WorkingOut.unknown
@@ -40,9 +39,5 @@ extension StateDelegateTestDouble: StateDelegate {
         predictWorkingOutForRecordCount += 1
 
         return predictWorkingOutForRecordResult
-    }
-
-    func stateRollbackClassifier(_ state: State) {
-        rollbackClassifierCount += 1
     }
 }

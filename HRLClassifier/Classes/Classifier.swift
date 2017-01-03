@@ -14,15 +14,23 @@ import HRLAlgorithms
 final public class Classifier {
     public typealias TrainingData = (record: Record, isWorkingOut: Bool)
 
-    private let dataFrame = DataFrame()
-    private let classifier = HRLKNNClassifier()
+    private let context: Context
+
+    fileprivate let dataFrame: DataFrame
+    fileprivate let classifier: HRLKNNClassifier
 
     /**
         Initializes a new `Classifier`.
      
         - Returns: a new `Classifier`.
      */
-    public init() {}
+    public init() {
+        context = Context()
+        dataFrame = DataFrame()
+        classifier = HRLKNNClassifier()
+
+        context.delegate = self
+    }
 
     /**
         Add data that will be used to train the `Classifier`.
@@ -30,7 +38,7 @@ final public class Classifier {
         - Parameter trainingData: data to add.
      */
     public func add(trainingData: TrainingData) {
-        dataFrame.append(record: trainingData.record, isWorkingOut: trainingData.isWorkingOut)
+        context.add(trainingData: trainingData)
     }
 
     /**
@@ -38,10 +46,7 @@ final public class Classifier {
         in order to prepare it to make predictions.
      */
     public func train() {
-        let matrix = HRLMatrix()
-        matrix.fill(with: dataFrame)
-
-        classifier.train(with: matrix)
+        context.trainClassifier()
     }
 
     /**
@@ -52,6 +57,27 @@ final public class Classifier {
         - Returns: `WorkingOut.true` only if the `Classifier` estimates the user was working out.
      */
     public func predictedWorkingOut(for record:Record) -> WorkingOut {
+        return context.predictedWorkingOut(for: record)
+    }
+}
+
+extension Classifier: ContextDelegate {
+    func context(_ context: Context, addTrainingData trainingData: Classifier.TrainingData) {
+        dataFrame.append(record: trainingData.record, isWorkingOut: trainingData.isWorkingOut)
+    }
+
+    func contextWillTrainClassifier(_ context: Context) -> Bool {
+        return true
+    }
+
+    func contextTrainClassifier(_ context: Context) {
+        let matrix = HRLMatrix()
+        matrix.fill(with: dataFrame)
+
+        classifier.train(with: matrix)
+    }
+
+    func context(_ context: Context, predictWorkingOutForRecord record: Record) -> WorkingOut {
         let predictedClass = classifier.predictClass(for: record)
 
         return WorkingOut(rawValue: predictedClass)!
