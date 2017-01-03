@@ -22,37 +22,40 @@ pod "HRLClassifier"
 ## Usage
 
 ```swift
-let date = Date()
+import HRLClassifier
 
-let dataFrame = DataFrame()
-dataFrame.append(record: Record(date:date.addingTimeInterval(-6 * 60 * 60),
-                                bpm:Float(100)),
-                 isWorkingOut: false)
-dataFrame.append(record: Record(date:date.addingTimeInterval(-5 * 60 * 60),
-                                bpm:Float(140)),
-                 isWorkingOut: true)
-dataFrame.append(record: Record(date:date.addingTimeInterval(-4 * 60 * 60),
-                                bpm:Float(120)),
-                 isWorkingOut: true)
-dataFrame.append(record: Record(date:date.addingTimeInterval(-3 * 60 * 60),
-                                bpm:Float(70)),
-                 isWorkingOut: false)
-dataFrame.append(record: Record(date:date.addingTimeInterval(-2 * 60 * 60),
-                                bpm:Float(55)),
-                 isWorkingOut: false)
-dataFrame.append(record: Record(date:date.addingTimeInterval(-1 * 60 * 60),
-                                bpm:Float(125)),
-                 isWorkingOut: true)
+let baseDate = Date(timeIntervalSinceReferenceDate: 0)
+let dayInterval = 24 * 60 * 60
+let maxBPM = 200
 
+// Add training data
 let classifier = Classifier()
-classifier.train(with: dataFrame)
 
-let predictDate = date.addingTimeInterval(-3.5 * 60 * 60)
-let predictBPM = Float(130)
-let isWorkingOut = classifier.predictedWorkingOut(for: Record(date:predictDate,
-                                                              bpm:predictBPM))
+for i in 0..<7 {
+    for _ in 0..<Classifier.Constants.minRecordsPerWeekday {
+        let timeInterval = i * dayInterval + Int(arc4random_uniform(UInt32(dayInterval)))
 
-print("At \(predictDate) with \(predictBPM) bpm, is user working out? \(isWorkingOut)")
+        let date = baseDate.addingTimeInterval(TimeInterval(timeInterval))
+        let bpm = Float(arc4random_uniform(UInt32(maxBPM)))
+        let record = Record(date: date, bpm: bpm)
+
+        let isWorkingOut = arc4random_uniform(2) == 1 ? true : false
+
+        classifier.add(trainingData: (record: record, isWorkingOut: isWorkingOut))
+    }
+}
+
+// Train classifier
+classifier.train()
+
+// Predict
+let date = baseDate.addingTimeInterval(TimeInterval(7 * dayInterval))
+let bpm = Float(arc4random_uniform(UInt32(maxBPM)))
+let record = Record(date: date, bpm: bpm)
+
+let prediction = classifier.predictedWorkingOut(for: record)
+
+print("At \(date) with \(bpm) bpm, is user working out? \(prediction)")
 ```
 
 ## License
