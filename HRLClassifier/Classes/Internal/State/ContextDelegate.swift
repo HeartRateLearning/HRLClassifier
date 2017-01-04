@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Defines all possible events or requests a `Context` might trigger.
+/// Defines all possible events or requests a `ContextProtocol` might trigger.
 /// Notice that it is a Class-Only Protocol, a struct would be copied on assigment to
 /// a property.
 protocol ContextDelegate: class {
@@ -19,7 +19,7 @@ protocol ContextDelegate: class {
             - context: context that triggered the event.
             - trainingData: data to add.
      */
-    func context(_ context: Context, addTrainingData trainingData: Classifier.TrainingData)
+    func context(_ context: ContextProtocol, addTrainingData trainingData: Classifier.TrainingData)
 
     /**
         Tells the delegate that the `Classifier` is about to be trained.
@@ -28,14 +28,14 @@ protocol ContextDelegate: class {
 
         - Returns: `true` if the `Classifier` can be trained.
      */
-    func contextWillTrainClassifier(_ context: Context) -> Bool
+    func contextWillTrainClassifier(_ context: ContextProtocol) -> Bool
 
     /**
         Ask delegate to train the `Classifier`.
 
         - Parameter context: context that triggered the event.
      */
-    func contextTrainClassifier(_ context: Context)
+    func contextTrainClassifier(_ context: ContextProtocol)
 
     /**
         Ask delegate to get a prediction.
@@ -46,5 +46,6 @@ protocol ContextDelegate: class {
 
      - Returns: `WorkingOut.true` only if the `Classifier` estimates the user was working out.
      */
-    func context(_ context: Context, predictWorkingOutForRecord record: Record) -> WorkingOut
+    func context(_ context: ContextProtocol,
+                 predictWorkingOutForRecord record: Record) -> WorkingOut
 }

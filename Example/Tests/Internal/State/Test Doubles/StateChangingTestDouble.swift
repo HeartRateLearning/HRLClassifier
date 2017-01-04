@@ -10,7 +10,7 @@ import Foundation
 
 @testable import HRLClassifier
 
-class StateChangingTestDouble {
+final class StateChangingTestDouble {
     fileprivate(set) var changeToAddingTrainingDataCount = 0
     fileprivate(set) var changeToPredictingWorkingOutCount = 0
 }

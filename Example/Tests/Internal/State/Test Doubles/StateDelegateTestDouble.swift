@@ -10,7 +10,7 @@ import Foundation
 
 @testable import HRLClassifier
 
-class StateDelegateTestDouble {
+final class StateDelegateTestDouble {
     fileprivate(set) var addTrainingDataCount = 0
     fileprivate(set) var willTrainClassifiderCount = 0
     fileprivate(set) var trainClassifierCount = 0

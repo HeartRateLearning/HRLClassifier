@@ -21,7 +21,7 @@ final public class Classifier {
         static let minRecordsPerWeekday = 80
     }
 
-    private let context: Context
+    private let context: ContextProtocol
 
     fileprivate let dataFrame: DataFrameProtocol
     fileprivate let classifier: HRLKNNClassifier
@@ -39,13 +39,13 @@ final public class Classifier {
         Initializes a new `Classifier`.
      
         - Parameters:
-            - context: `Context` to handle the internal state of the `Classifier`
+            - context: `ContextProtocol` to handle the internal state of the `Classifier`
             - dataFrame: `Dataframe` to store data that will be used to train the `Classifier`
             - classifier: KNN classifier that, once trained, will make the predictions
 
         - Returns: a new `Classifier`.
      */
-    init(context: Context, dataFrame: DataFrameProtocol, classifier: HRLKNNClassifier) {
+    init(context: ContextProtocol, dataFrame: DataFrameProtocol, classifier: HRLKNNClassifier) {
         self.context = context
         self.dataFrame = dataFrame
         self.classifier = classifier
@@ -80,27 +80,34 @@ final public class Classifier {
     public func predictedWorkingOut(for record:Record) -> WorkingOut {
         return context.predictedWorkingOut(for: record)
     }
+
+    /// Disable predictions, accept more new training data
+    public func rollback() {
+        context.rollbackClassifier()
+    }
 }
 
 extension Classifier: ContextDelegate {
-    func context(_ context: Context, addTrainingData trainingData: Classifier.TrainingData) {
+    func context(_ context: ContextProtocol,
+                 addTrainingData trainingData: Classifier.TrainingData) {
         dataFrame.append(record: trainingData.record, isWorkingOut: trainingData.isWorkingOut)
     }
 
-    func contextWillTrainClassifier(_ context: Context) -> Bool {
+    func contextWillTrainClassifier(_ context: ContextProtocol) -> Bool {
         let recordCountPerWeekday = dataFrame.recordCountPerWeekday
 
         return recordCountPerWeekday.reduce(true, { $0 && ($1 >= Constants.minRecordsPerWeekday)})
     }
 
-    func contextTrainClassifier(_ context: Context) {
+    func contextTrainClassifier(_ context: ContextProtocol) {
         let matrix = HRLMatrix()
         matrix.fill(with: dataFrame)
 
         classifier.train(with: matrix)
     }
 
-    func context(_ context: Context, predictWorkingOutForRecord record: Record) -> WorkingOut {
+    func context(_ context: ContextProtocol,
+                 predictWorkingOutForRecord record: Record) -> WorkingOut {
         let predictedClass = classifier.predictClass(for: record)
 
         return WorkingOut(rawValue: predictedClass)!

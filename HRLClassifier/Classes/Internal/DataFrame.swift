@@ -33,7 +33,7 @@ protocol DataFrameProtocol: HRLMatrixDataSource {
     func append(record: Record, isWorkingOut: Bool)
 }
 
-/// Implementation of `DataFrameProtocol`
+/// Implementation of `DataFrameProtocol`.
 final class DataFrame: NSObject {
     fileprivate(set) var recordCountPerWeekday = Array(repeating: 0, count: Constants.daysPerWeek)
 

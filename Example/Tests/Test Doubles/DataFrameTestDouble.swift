@@ -11,7 +11,7 @@ import Foundation
 @testable import HRLAlgorithms
 @testable import HRLClassifier
 
-class DataFrameTestDouble: NSObject {
+final class DataFrameTestDouble: NSObject {
     fileprivate(set) var appendCount = 0
 
     var recordCountPerWeekday: [Int] = []

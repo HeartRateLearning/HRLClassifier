@@ -15,13 +15,45 @@ class ClassifierTest: XCTestCase {
 
     var sut: Classifier!
 
-    let context = Context()
+    let context = ContextTestDouble()
     let dataFrame = DataFrameTestDouble()
 
     override func setUp() {
         super.setUp()
 
         sut = Classifier(context: context, dataFrame: dataFrame, classifier: HRLKNNClassifier())
+    }
+
+    func test_addTrainingData_forwardToContext() {
+        // when
+        sut.add(trainingData: anyTrainingData())
+
+        // then
+        XCTAssertEqual(context.addTrainingDataCount, 1)
+    }
+
+    func test_train_forwardToContext() {
+        // when
+        sut.train()
+
+        // then
+        XCTAssertEqual(context.trainClassifierCount, 1)
+    }
+
+    func test_predictedWorkingOut_forwardToContext() {
+        // when
+        _ = sut.predictedWorkingOut(for: anyRecord())
+
+        // then
+        XCTAssertEqual(context.predictedWorkingOutCount, 1)
+    }
+
+    func test_rollback_forwardToContext() {
+        // when
+        sut.rollback()
+
+        // then
+        XCTAssertEqual(context.rollbackClassifierCount, 1)
     }
 
     func test_contextAddTrainingData_appendToDataFrame() {
