@@ -14,6 +14,14 @@ final class PredictingWorkingOutState {
 }
 
 extension PredictingWorkingOutState: State {
+    func calculatedClassificationAccuracy() -> Double {
+        guard let accuracy = delegate?.stateCalculateClassificationAccuracy(self) else {
+            return Double(0)
+        }
+
+        return accuracy
+    }
+
     func predictedWorkingOut(for record:Record) -> WorkingOut {
         guard let prediction = delegate?.state(self, predictWorkingOutForRecord: record) else {
             return .unknown

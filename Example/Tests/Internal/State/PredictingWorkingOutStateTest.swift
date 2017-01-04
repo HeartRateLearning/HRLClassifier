@@ -47,6 +47,25 @@ class PredictingWorkingOutStateTest: XCTestCase {
         XCTAssertEqual(stateChanger.changeToPredictingWorkingOutCount, 0)
     }
 
+    func testSutWithoutDelegate_calculatedClassificationAccuracy_returnZero() {
+        // given
+        sut.delegate = nil
+
+        // when
+        let result = sut.calculatedClassificationAccuracy()
+
+        // then
+        XCTAssertEqual(result, 0)
+    }
+
+    func testConfiguredSut_calculatedClassificationAccuracy_forwardToDelegate() {
+        // when
+        _ = sut.calculatedClassificationAccuracy()
+
+        // then
+        XCTAssertEqual(delegate.calculateClassificationAccuracyCount, 1)
+    }
+
     func testSutWithoutDelegate_predictedWorkingOut_returnUnkwnown() {
         // given
         sut.delegate = nil

@@ -28,6 +28,9 @@ protocol State: class {
     /// Train the `Classifier`.
     func trainClassifier()
 
+    /// Estimated accuracy of the `Classifier`
+    func calculatedClassificationAccuracy() -> Double
+
     /**
         Use this method to make predictions.
 
@@ -45,6 +48,10 @@ extension State {
     func add(trainingData: Classifier.TrainingData) {}
 
     func trainClassifier() {}
+
+    func calculatedClassificationAccuracy() -> Double {
+        return Double(0)
+    }
 
     func predictedWorkingOut(for record:Record) -> WorkingOut {
         return .unknown

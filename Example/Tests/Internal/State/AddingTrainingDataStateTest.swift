@@ -71,6 +71,14 @@ class AddingTrainingDataStateTest: XCTestCase {
         XCTAssertEqual(stateChanger.changeToPredictingWorkingOutCount, 1)
     }
 
+    func testConfiguredSut_calculatedClassificationAccuracy_returnZero() {
+        // when
+        let result = sut.calculatedClassificationAccuracy()
+
+        // then
+        XCTAssertEqual(result, 0)
+    }
+
     func testConfiguredSut_predictedWorkingOut_returnUnkwnown() {
         // when
         let result = sut.predictedWorkingOut(for: anyRecord)

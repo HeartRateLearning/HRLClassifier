@@ -25,6 +25,9 @@ protocol ContextProtocol: class {
     /// Train the `Classifier` with the trainig data provided before.
     func trainClassifier()
 
+    /// Estimated accuracy of the `Classifier`
+    func calculatedClassificationAccuracy() -> Double
+
     /**
         Return a prediction.
 
@@ -73,6 +76,10 @@ extension Context: ContextProtocol {
         state.trainClassifier()
     }
 
+    func calculatedClassificationAccuracy() -> Double {
+        return state.calculatedClassificationAccuracy()
+    }
+
     func predictedWorkingOut(for record:Record) -> WorkingOut {
         return state.predictedWorkingOut(for: record)
     }
@@ -107,6 +114,14 @@ extension Context: StateDelegate {
 
     func stateTrainClassifier(_ state: State) {
         delegate?.contextTrainClassifier(self)
+    }
+
+    func stateCalculateClassificationAccuracy(_ state: State) -> Double {
+        guard let accuracy = delegate?.contextCalculateClassificationAccuracy(self) else {
+            return Double(0)
+        }
+
+        return accuracy
     }
 
     func state(_ state: State, predictWorkingOutForRecord record: Record) -> WorkingOut {

@@ -13,10 +13,12 @@ import Foundation
 final class ContextTestDouble {
     fileprivate(set) var addTrainingDataCount = 0
     fileprivate(set) var trainClassifierCount = 0
+    fileprivate(set) var calculatedClassificationAccuracyCount = 0
     fileprivate(set) var predictedWorkingOutCount = 0
     fileprivate(set) var rollbackClassifierCount = 0
 
     weak var delegate: ContextDelegate?
+    var calculatedClassificationAccuracyResult = Double(0)
     var predictedWorkingOutResult = WorkingOut.unknown
 }
 
@@ -27,6 +29,12 @@ extension ContextTestDouble: ContextProtocol {
 
     func trainClassifier() {
         trainClassifierCount += 1
+    }
+
+    func calculatedClassificationAccuracy() -> Double {
+        calculatedClassificationAccuracyCount += 1
+
+        return calculatedClassificationAccuracyResult
     }
 
     func predictedWorkingOut(for record:Record) -> WorkingOut {

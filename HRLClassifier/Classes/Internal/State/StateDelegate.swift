@@ -38,6 +38,15 @@ protocol StateDelegate: class {
     func stateTrainClassifier(_ state: State)
 
     /**
+        Ask delegate to get the estimated accuracy of the `Classifier`.
+
+        - Parameter state: state that triggered the event.
+
+        - Returns: Estimated accureacy
+     */
+    func stateCalculateClassificationAccuracy(_ state: State) -> Double
+
+    /**
         Ask delegate to get a prediction.
 
         - Parameters:

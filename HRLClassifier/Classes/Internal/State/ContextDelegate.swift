@@ -38,6 +38,15 @@ protocol ContextDelegate: class {
     func contextTrainClassifier(_ context: ContextProtocol)
 
     /**
+        Ask delegate to get the estimated accuracy of the `Classifier`.
+     
+        - Parameter context: context that triggered the event.
+     
+        - Returns: Estimated accureacy
+     */
+    func contextCalculateClassificationAccuracy(_ context: ContextProtocol) -> Double
+
+    /**
         Ask delegate to get a prediction.
 
         - Parameters:

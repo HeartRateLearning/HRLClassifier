@@ -14,9 +14,11 @@ final class ContextDelegateTestDouble {
     fileprivate(set) var addTrainingDataCount = 0
     fileprivate(set) var willTrainClassifierCount = 0
     fileprivate(set) var trainClassifierCount = 0
+    fileprivate(set) var calculateClassificationAccuracyCount = 0
     fileprivate(set) var predictWorkingOutForRecordCount = 0
 
     var willTrainClassifierResult = false
+    var calculateClassificationAccuracyResult = Double(0)
     var predictWorkingOutForRecordResult = WorkingOut.unknown
 }
 
@@ -34,6 +36,12 @@ extension ContextDelegateTestDouble: ContextDelegate {
 
     func contextTrainClassifier(_ context: ContextProtocol) {
         trainClassifierCount += 1
+    }
+
+    func contextCalculateClassificationAccuracy(_ context: ContextProtocol) -> Double {
+        calculateClassificationAccuracyCount += 1
+
+        return calculateClassificationAccuracyResult
     }
 
     func context(_ context: ContextProtocol,

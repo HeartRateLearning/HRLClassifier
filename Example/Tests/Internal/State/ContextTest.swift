@@ -60,6 +60,25 @@ class ContextTest: XCTestCase {
         XCTAssertEqual(delegate.trainClassifierCount, 1)
     }
 
+    func testSutWithoutDelegate_calculateClassificationAccuracy_returnZero() {
+        // given
+        sut.delegate = nil
+
+        // when
+        let result = sut.stateCalculateClassificationAccuracy(anyState)
+
+        // then
+        XCTAssertEqual(result, 0)
+    }
+
+    func testConfiguredSut_calculateClassificationAccuracy_forwardToContextDelegate() {
+        // when
+        _ = sut.stateCalculateClassificationAccuracy(anyState)
+
+        // then
+        XCTAssertEqual(delegate.calculateClassificationAccuracyCount, 1)
+    }
+
     func testSutWithoutDelegate_predictWorkingOutForRecord_returnUnknown() {
         // given
         sut.delegate = nil

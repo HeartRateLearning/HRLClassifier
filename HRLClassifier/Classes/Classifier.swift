@@ -26,6 +26,8 @@ final public class Classifier {
     fileprivate let dataFrame: DataFrameProtocol
     fileprivate let classifier: HRLKNNClassifier
 
+    fileprivate var classifierAccuracy = Double(0)
+
     /**
         Initializes a new `Classifier`.
      
@@ -71,6 +73,16 @@ final public class Classifier {
     }
 
     /**
+        Once the `Classifier` is trained, use this method to get the estimated accuracy
+        of the `Classifier`
+     
+        - Returns: Estimated accuracy between 0...1
+     */
+    public func calculatedClassificationAccuracy() -> Double {
+        return context.calculatedClassificationAccuracy()
+    }
+
+    /**
         Once the `Classifier` is trained, use this method to make predictions.
 
         - Parameter record: a `Record` instance.
@@ -103,7 +115,19 @@ extension Classifier: ContextDelegate {
         let matrix = HRLMatrix()
         matrix.fill(with: dataFrame)
 
-        classifier.train(with: matrix)
+        var trainingMatrix: HRLMatrix?
+        var testMatrix: HRLMatrix?
+        matrix.split(intoTraining: &trainingMatrix,
+                     test: &testMatrix,
+                     trainingBias: PrivateConstants.trainingBias)
+
+        classifier.train(with: trainingMatrix!)
+
+        classifierAccuracy = classifier.calculateClassificationAccuracy(using: testMatrix!)
+    }
+
+    func contextCalculateClassificationAccuracy(_ context: ContextProtocol) -> Double {
+        return classifierAccuracy
     }
 
     func context(_ context: ContextProtocol,
@@ -111,5 +135,11 @@ extension Classifier: ContextDelegate {
         let predictedClass = classifier.predictClass(for: record)
 
         return WorkingOut(rawValue: predictedClass)!
+    }
+}
+
+private extension Classifier {
+    enum PrivateConstants {
+        static let trainingBias = 0.75
     }
 }
