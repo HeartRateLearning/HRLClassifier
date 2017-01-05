@@ -11,6 +11,7 @@
 		FFA999281E1466EF00BFDD09 /* DataFrameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA999251E1466EF00BFDD09 /* DataFrameTest.swift */; };
 		FFA999291E1466EF00BFDD09 /* RecordTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA999261E1466EF00BFDD09 /* RecordTest.swift */; };
 		FFA9992A1E1466EF00BFDD09 /* WorkingOutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA999271E1466EF00BFDD09 /* WorkingOutTest.swift */; };
+		FFE8C8B51E1EF7A100338E10 /* ClassifierTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE8C8B41E1EF7A100338E10 /* ClassifierTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		FFA999251E1466EF00BFDD09 /* DataFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFrameTest.swift; sourceTree = "<group>"; };
 		FFA999261E1466EF00BFDD09 /* RecordTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTest.swift; sourceTree = "<group>"; };
 		FFA999271E1466EF00BFDD09 /* WorkingOutTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingOutTest.swift; sourceTree = "<group>"; };
+		FFE8C8B41E1EF7A100338E10 /* ClassifierTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifierTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				FFE8C8B41E1EF7A100338E10 /* ClassifierTest.swift */,
 				FFA999251E1466EF00BFDD09 /* DataFrameTest.swift */,
 				FFA999261E1466EF00BFDD09 /* RecordTest.swift */,
 				FFA999271E1466EF00BFDD09 /* WorkingOutTest.swift */,
@@ -225,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFE8C8B51E1EF7A100338E10 /* ClassifierTest.swift in Sources */,
 				FFA9992A1E1466EF00BFDD09 /* WorkingOutTest.swift in Sources */,
 				FFA999281E1466EF00BFDD09 /* DataFrameTest.swift in Sources */,
 				FFA999291E1466EF00BFDD09 /* RecordTest.swift in Sources */,

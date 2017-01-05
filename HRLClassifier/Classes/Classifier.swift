@@ -12,7 +12,7 @@ import HRLAlgorithms
 /// Train a `Classifier` with a `Dataframe` and then pass it a `Record`
 /// to predict if a person was working out or not.
 public final class Classifier {
-    private let classifier = HRLKNNClassifier()
+    private var classifier: HRLKNNClassifier?
 
     /**
         Initializes a new `Classifier`
@@ -30,7 +30,10 @@ public final class Classifier {
         let matrix = HRLMatrix()
         matrix.fill(with: dataFrame)
 
-        classifier.train(with: matrix)
+        let otherClassifier = HRLKNNClassifier()
+        otherClassifier.train(with: matrix)
+
+        classifier = otherClassifier
     }
 
     /**
@@ -41,7 +44,9 @@ public final class Classifier {
         - Returns: `WorkingOut.true` only if the `Classifier` estimates the user was working out.
      */
     public func predictedWorkingOut(for record:Record) -> WorkingOut {
-        let predictedClass = classifier.predictClass(for: record)
+        guard let predictedClass = classifier?.predictClass(for: record) else {
+            return .unknown
+        }
 
         return WorkingOut(rawValue: predictedClass)!
     }
