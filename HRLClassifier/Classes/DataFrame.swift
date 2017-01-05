@@ -11,7 +11,7 @@ import HRLAlgorithms
 
 /// A `DataFrame` contains all the necessary data to train a `Classifier`:
 /// heart rates at different moments and if the user was working out ot not.
-public class DataFrame: NSObject {
+public final class DataFrame: NSObject {
     fileprivate var records: [Record] = []
     fileprivate var classes: [UInt] = []
 
