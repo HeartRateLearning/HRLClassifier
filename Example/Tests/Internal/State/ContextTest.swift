@@ -25,7 +25,7 @@ class ContextTest: XCTestCase {
         sut.delegate = delegate
     }
 
-    func testConfiguredSut_StateDelegateAddTrainingData_forwardToContextDelegate() {
+    func testConfiguredSut_stateDelegateAddTrainingData_forwardToContextDelegate() {
         // when
         sut.state(anyState, addTrainingData: (record: anyRecord, isWorkingOut: false))
 
@@ -33,7 +33,7 @@ class ContextTest: XCTestCase {
         XCTAssertEqual(delegate.addTrainingDataCount, 1)
     }
 
-    func testSutWithoutDelegate_willTrainClassifier_returnFalse() {
+    func testSutWithoutDelegate_stateDelegateWillTrainClassifier_returnFalse() {
         // given
         sut.delegate = nil
 
@@ -44,7 +44,7 @@ class ContextTest: XCTestCase {
         XCTAssertFalse(result)
     }
 
-    func testConfiguredSut_willTrainClassifier_forwardToContextDelegate() {
+    func testConfiguredSut_stateDelegateWillTrainClassifier_forwardToContextDelegate() {
         // when
         _ = sut.stateWillTrainClassifier(anyState)
 
@@ -52,7 +52,7 @@ class ContextTest: XCTestCase {
         XCTAssertEqual(delegate.willTrainClassifierCount, 1)
     }
 
-    func testConfiguredSut_trainClassifier_forwardToContextDelegate() {
+    func testConfiguredSut_stateDelegateTrainClassifier_forwardToContextDelegate() {
         // when
         sut.stateTrainClassifier(anyState)
 
@@ -60,26 +60,26 @@ class ContextTest: XCTestCase {
         XCTAssertEqual(delegate.trainClassifierCount, 1)
     }
 
-    func testSutWithoutDelegate_calculateClassificationAccuracy_returnZero() {
+    func testSutWithoutDelegate_stateDelegateWillDeployClassifier_returnFalse() {
         // given
         sut.delegate = nil
 
         // when
-        let result = sut.stateCalculateClassificationAccuracy(anyState)
+        let result = sut.stateWillDeployClassifier(anyState)
 
         // then
-        XCTAssertEqual(result, 0)
+        XCTAssertFalse(result)
     }
 
-    func testConfiguredSut_calculateClassificationAccuracy_forwardToContextDelegate() {
+    func testConfiguredSut_stateDelegateWillDeployClassifier_forwardToContextDelegate() {
         // when
-        _ = sut.stateCalculateClassificationAccuracy(anyState)
+        _ = sut.stateWillDeployClassifier(anyState)
 
         // then
-        XCTAssertEqual(delegate.calculateClassificationAccuracyCount, 1)
+        XCTAssertEqual(delegate.willDeployClassifierCount, 1)
     }
 
-    func testSutWithoutDelegate_predictWorkingOutForRecord_returnUnknown() {
+    func testSutWithoutDelegate_stateDelegatePredictWorkingOutForRecord_returnUnknown() {
         // given
         sut.delegate = nil
 
@@ -90,7 +90,7 @@ class ContextTest: XCTestCase {
         XCTAssertEqual(result, .unknown)
     }
 
-    func testConfiguredSut_predictWorkingOutForRecord_forwardToContextDelegate() {
+    func testConfiguredSut_stateDelegatePredictWorkingOutForRecord_forwardToContextDelegate() {
         // when
         _ = sut.state(anyState, predictWorkingOutForRecord: anyRecord)
 

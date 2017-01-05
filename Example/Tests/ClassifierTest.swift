@@ -40,12 +40,12 @@ class ClassifierTest: XCTestCase {
         XCTAssertEqual(context.trainClassifierCount, 1)
     }
 
-    func test_calculatedClassificationAccuracy_forwardToContext() {
+    func test_deploy_forwardToContext() {
         // when
-        _ = sut.calculatedClassificationAccuracy()
+        sut.deploy()
 
         // then
-        XCTAssertEqual(context.calculatedClassificationAccuracyCount, 1)
+        XCTAssertEqual(context.deployClassifierCount, 1)
     }
 
     func test_predictedWorkingOut_forwardToContext() {

@@ -23,6 +23,7 @@
 		FF3EAB9B1E19D31F00394AF1 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3EAB941E19D31F00394AF1 /* State.swift */; };
 		FF3EAB9C1E19D31F00394AF1 /* StateChanging.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3EAB951E19D31F00394AF1 /* StateChanging.swift */; };
 		FF3EAB9D1E19D31F00394AF1 /* StateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3EAB961E19D31F00394AF1 /* StateDelegate.swift */; };
+		FF8464E71E1DCBE4004744E5 /* PreDeployedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8464E61E1DCBE4004744E5 /* PreDeployedState.swift */; };
 		FFDCAC6D1E182A48003608C1 /* DataFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCAC6B1E182A48003608C1 /* DataFrame.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		FF3EAB941E19D31F00394AF1 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		FF3EAB951E19D31F00394AF1 /* StateChanging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateChanging.swift; sourceTree = "<group>"; };
 		FF3EAB961E19D31F00394AF1 /* StateDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateDelegate.swift; sourceTree = "<group>"; };
+		FF8464E61E1DCBE4004744E5 /* PreDeployedState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreDeployedState.swift; sourceTree = "<group>"; };
 		FFDCAC6B1E182A48003608C1 /* DataFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFrame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -209,6 +211,7 @@
 				FF3EAB901E19D31F00394AF1 /* AddingTrainingDataState.swift */,
 				FF3EAB911E19D31F00394AF1 /* Context.swift */,
 				FF3EAB921E19D31F00394AF1 /* ContextDelegate.swift */,
+				FF8464E61E1DCBE4004744E5 /* PreDeployedState.swift */,
 				FF3EAB931E19D31F00394AF1 /* PredictingWorkingOutState.swift */,
 				FF3EAB941E19D31F00394AF1 /* State.swift */,
 				FF3EAB951E19D31F00394AF1 /* StateChanging.swift */,
@@ -320,6 +323,7 @@
 				FF3EAB9D1E19D31F00394AF1 /* StateDelegate.swift in Sources */,
 				FF339EBF1E19A2A300E6DAA5 /* WorkingOut.swift in Sources */,
 				FF3EAB9B1E19D31F00394AF1 /* State.swift in Sources */,
+				FF8464E71E1DCBE4004744E5 /* PreDeployedState.swift in Sources */,
 				866CA36C4CCEAEA8000ACCB9AF6DB76C /* HRLClassifier-dummy.m in Sources */,
 				FF3EAB9A1E19D31F00394AF1 /* PredictingWorkingOutState.swift in Sources */,
 				FF3EAB981E19D31F00394AF1 /* Context.swift in Sources */,

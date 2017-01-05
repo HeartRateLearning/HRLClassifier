@@ -12,13 +12,13 @@ import Foundation
 
 final class StateDelegateTestDouble {
     fileprivate(set) var addTrainingDataCount = 0
-    fileprivate(set) var willTrainClassifiderCount = 0
+    fileprivate(set) var willTrainClassifierCount = 0
     fileprivate(set) var trainClassifierCount = 0
-    fileprivate(set) var calculateClassificationAccuracyCount = 0
+    fileprivate(set) var willDeployClassifierCount = 0
     fileprivate(set) var predictWorkingOutForRecordCount = 0
 
     var willTrainClassifierResult = false
-    var calculateClassificationAccuracyResult = Double(0)
+    var willDeployClassifierResult = false
     var predictWorkingOutForRecordResult = WorkingOut.unknown
 }
 
@@ -28,7 +28,7 @@ extension StateDelegateTestDouble: StateDelegate {
     }
 
     func stateWillTrainClassifier(_ state: State) -> Bool {
-        willTrainClassifiderCount += 1
+        willTrainClassifierCount += 1
 
         return willTrainClassifierResult
     }
@@ -37,10 +37,10 @@ extension StateDelegateTestDouble: StateDelegate {
         trainClassifierCount += 1
     }
 
-    func stateCalculateClassificationAccuracy(_ state: State) -> Double {
-        calculateClassificationAccuracyCount += 1
+    func stateWillDeployClassifier(_ state: State) -> Bool {
+        willDeployClassifierCount += 1
 
-        return calculateClassificationAccuracyResult
+        return willDeployClassifierResult
     }
 
     func state(_ state: State, predictWorkingOutForRecord record: Record) -> WorkingOut {

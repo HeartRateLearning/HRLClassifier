@@ -25,6 +25,6 @@ extension AddingTrainingDataState: State {
         
         delegate?.stateTrainClassifier(self)
 
-        stateChanger?.changeToPredictingWorkingOut()
+        stateChanger?.changeToPreDeployed()
     }
 }

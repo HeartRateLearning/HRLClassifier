@@ -12,12 +12,17 @@ import Foundation
 
 final class StateChangingTestDouble {
     fileprivate(set) var changeToAddingTrainingDataCount = 0
+    fileprivate(set) var changeToPreDeployedCount = 0
     fileprivate(set) var changeToPredictingWorkingOutCount = 0
 }
 
 extension StateChangingTestDouble: StateChanging {
     func changeToAddingTrainingData() {
         changeToAddingTrainingDataCount += 1
+    }
+
+    func changeToPreDeployed() {
+        changeToPreDeployedCount += 1
     }
 
     func changeToPredictingWorkingOut() {

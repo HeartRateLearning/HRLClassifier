@@ -28,8 +28,8 @@ protocol State: class {
     /// Train the `Classifier`.
     func trainClassifier()
 
-    /// Estimated accuracy of the `Classifier`
-    func calculatedClassificationAccuracy() -> Double
+    /// Deploy the `Classifier` in order to make predictions
+    func deployClassifier()
 
     /**
         Use this method to make predictions.
@@ -49,9 +49,7 @@ extension State {
 
     func trainClassifier() {}
 
-    func calculatedClassificationAccuracy() -> Double {
-        return Double(0)
-    }
+    func deployClassifier() {}
 
     func predictedWorkingOut(for record:Record) -> WorkingOut {
         return .unknown

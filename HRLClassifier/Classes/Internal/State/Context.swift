@@ -25,8 +25,8 @@ protocol ContextProtocol: class {
     /// Train the `Classifier` with the trainig data provided before.
     func trainClassifier()
 
-    /// Estimated accuracy of the `Classifier`
-    func calculatedClassificationAccuracy() -> Double
+    /// Prepare the `Classifier` to make predictions, once it was trained.
+    func deployClassifier()
 
     /**
         Return a prediction.
@@ -76,8 +76,8 @@ extension Context: ContextProtocol {
         state.trainClassifier()
     }
 
-    func calculatedClassificationAccuracy() -> Double {
-        return state.calculatedClassificationAccuracy()
+    func deployClassifier() {
+        state.deployClassifier()
     }
 
     func predictedWorkingOut(for record:Record) -> WorkingOut {
@@ -92,6 +92,10 @@ extension Context: ContextProtocol {
 extension Context: StateChanging {
     func changeToAddingTrainingData() {
         state = AddingTrainingDataState()
+    }
+
+    func changeToPreDeployed() {
+        state = PreDeployedState()
     }
 
     func changeToPredictingWorkingOut() {
@@ -116,12 +120,12 @@ extension Context: StateDelegate {
         delegate?.contextTrainClassifier(self)
     }
 
-    func stateCalculateClassificationAccuracy(_ state: State) -> Double {
-        guard let accuracy = delegate?.contextCalculateClassificationAccuracy(self) else {
-            return Double(0)
+    func stateWillDeployClassifier(_ state: State) -> Bool {
+        guard let willDeploy = delegate?.contextWillDeployClassifier(self) else {
+            return false
         }
 
-        return accuracy
+        return willDeploy
     }
 
     func state(_ state: State, predictWorkingOutForRecord record: Record) -> WorkingOut {

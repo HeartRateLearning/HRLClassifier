@@ -56,7 +56,7 @@ final public class Classifier {
     }
 
     /**
-        Add data that will be used to train the `Classifier`.
+        Add data to train the `Classifier`.
      
         - Parameter trainingData: data to add.
      */
@@ -64,26 +64,19 @@ final public class Classifier {
         context.add(trainingData: trainingData)
     }
 
-    /**
-        After adding the training data, call this method to train the `Classifier`
-        in order to prepare it to make predictions.
-     */
+    /// After adding the training data, call this method to train the `Classifier`.
     public func train() {
         context.trainClassifier()
     }
 
-    /**
-        Once the `Classifier` is trained, use this method to get the estimated accuracy
-        of the `Classifier`
-     
-        - Returns: Estimated accuracy between 0...1
-     */
-    public func calculatedClassificationAccuracy() -> Double {
-        return context.calculatedClassificationAccuracy()
+    /// Once trained, call this method to deploy the `Classifier`, i.e. to be able to
+    /// make predictions
+    public func deploy() {
+        context.deployClassifier()
     }
 
     /**
-        Once the `Classifier` is trained, use this method to make predictions.
+        Once the `Classifier` is deployed, use this method to make predictions.
 
         - Parameter record: a `Record` instance.
      
@@ -93,7 +86,7 @@ final public class Classifier {
         return context.predictedWorkingOut(for: record)
     }
 
-    /// Disable predictions, accept more new training data
+    /// Disable predictions & accept more new training data
     public func rollback() {
         context.rollbackClassifier()
     }
@@ -126,8 +119,8 @@ extension Classifier: ContextDelegate {
         classifierAccuracy = classifier.calculateClassificationAccuracy(using: testMatrix!)
     }
 
-    func contextCalculateClassificationAccuracy(_ context: ContextProtocol) -> Double {
-        return classifierAccuracy
+    func contextWillDeployClassifier(_ context: ContextProtocol) -> Bool {
+        return classifierAccuracy >= PrivateConstants.minAccuracyToMakePredictions
     }
 
     func context(_ context: ContextProtocol,
@@ -141,5 +134,6 @@ extension Classifier: ContextDelegate {
 private extension Classifier {
     enum PrivateConstants {
         static let trainingBias = 0.75
+        static let minAccuracyToMakePredictions = Double(0.9)
     }
 }

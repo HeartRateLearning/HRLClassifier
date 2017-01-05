@@ -11,6 +11,7 @@
 		FF2AB1771E1C51F50069333D /* DataFrameTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2AB1761E1C51F50069333D /* DataFrameTestDouble.swift */; };
 		FF2AB1791E1C52090069333D /* ClassifierTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2AB1781E1C52090069333D /* ClassifierTest.swift */; };
 		FF339EBD1E19A29700E6DAA5 /* WorkingOutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF339EBC1E19A29700E6DAA5 /* WorkingOutTest.swift */; };
+		FF8464E51E1DCBD0004744E5 /* PreDeployedStateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8464E41E1DCBD0004744E5 /* PreDeployedStateTest.swift */; };
 		FFA999291E1466EF00BFDD09 /* RecordTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA999261E1466EF00BFDD09 /* RecordTest.swift */; };
 		FFC130431E1C856400F12171 /* ContextTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC130421E1C856400F12171 /* ContextTestDouble.swift */; };
 		FFDCAC681E1829E9003608C1 /* DataFrameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCAC661E1829E9003608C1 /* DataFrameTest.swift */; };
@@ -34,6 +35,7 @@
 		FF2AB1761E1C51F50069333D /* DataFrameTestDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFrameTestDouble.swift; sourceTree = "<group>"; };
 		FF2AB1781E1C52090069333D /* ClassifierTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifierTest.swift; sourceTree = "<group>"; };
 		FF339EBC1E19A29700E6DAA5 /* WorkingOutTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingOutTest.swift; sourceTree = "<group>"; };
+		FF8464E41E1DCBD0004744E5 /* PreDeployedStateTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreDeployedStateTest.swift; sourceTree = "<group>"; };
 		FFA999261E1466EF00BFDD09 /* RecordTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTest.swift; sourceTree = "<group>"; };
 		FFC130421E1C856400F12171 /* ContextTestDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextTestDouble.swift; sourceTree = "<group>"; };
 		FFDCAC661E1829E9003608C1 /* DataFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFrameTest.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				FFF94C141E1AFDDD00544291 /* Test Doubles */,
 				FFF94C1B1E1AFE0500544291 /* AddingTrainingDataStateTest.swift */,
 				FFF94C1C1E1AFE0500544291 /* ContextTest.swift */,
+				FF8464E41E1DCBD0004744E5 /* PreDeployedStateTest.swift */,
 				FFF94C1D1E1AFE0500544291 /* PredictingWorkingOutStateTest.swift */,
 			);
 			path = State;
@@ -284,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF8464E51E1DCBD0004744E5 /* PreDeployedStateTest.swift in Sources */,
 				FFF94C201E1AFE0500544291 /* PredictingWorkingOutStateTest.swift in Sources */,
 				FFA999291E1466EF00BFDD09 /* RecordTest.swift in Sources */,
 				FFF94C1F1E1AFE0500544291 /* ContextTest.swift in Sources */,

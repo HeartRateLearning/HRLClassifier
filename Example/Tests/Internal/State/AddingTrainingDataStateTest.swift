@@ -42,10 +42,10 @@ class AddingTrainingDataStateTest: XCTestCase {
         sut.trainClassifier()
 
         // then
-        XCTAssertEqual(stateChanger.changeToPredictingWorkingOutCount, 0)
+        XCTAssertEqual(stateChanger.changeToPreDeployedCount, 0)
     }
 
-    func testSutThatDoesNotAllowTrainig_trainClassifier_neitherTrainClassifierNorChangeState() {
+    func testSutThatDoesNotAllowTraining_trainClassifier_neitherTrainClassifierNorChangeState() {
         // given
         delegate.willTrainClassifierResult = false
 
@@ -53,9 +53,9 @@ class AddingTrainingDataStateTest: XCTestCase {
         sut.trainClassifier()
 
         // then
-        XCTAssertEqual(delegate.willTrainClassifiderCount, 1)
+        XCTAssertEqual(delegate.willTrainClassifierCount, 1)
         XCTAssertEqual(delegate.trainClassifierCount, 0)
-        XCTAssertEqual(stateChanger.changeToPredictingWorkingOutCount, 0)
+        XCTAssertEqual(stateChanger.changeToPreDeployedCount, 0)
     }
 
     func testSutThatAllowsTraining_trainClassifier_forwardToDelegateAndChangeState() {
@@ -66,17 +66,21 @@ class AddingTrainingDataStateTest: XCTestCase {
         sut.trainClassifier()
 
         // then
-        XCTAssertEqual(delegate.willTrainClassifiderCount, 1)
+        XCTAssertEqual(delegate.willTrainClassifierCount, 1)
         XCTAssertEqual(delegate.trainClassifierCount, 1)
-        XCTAssertEqual(stateChanger.changeToPredictingWorkingOutCount, 1)
+        XCTAssertEqual(stateChanger.changeToPreDeployedCount, 1)
     }
 
-    func testConfiguredSut_calculatedClassificationAccuracy_returnZero() {
+    func testSutThatAllowsDeploying_deployClassifier_neitherForwardToDelegateNorChangeState() {
+        // given
+        delegate.willDeployClassifierResult = true
+
         // when
-        let result = sut.calculatedClassificationAccuracy()
+        sut.deployClassifier()
 
         // then
-        XCTAssertEqual(result, 0)
+        XCTAssertEqual(delegate.willDeployClassifierCount, 0)
+        XCTAssertEqual(stateChanger.changeToPredictingWorkingOutCount, 0)
     }
 
     func testConfiguredSut_predictedWorkingOut_returnUnkwnown() {

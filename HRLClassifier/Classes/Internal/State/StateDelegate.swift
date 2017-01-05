@@ -38,13 +38,13 @@ protocol StateDelegate: class {
     func stateTrainClassifier(_ state: State)
 
     /**
-        Ask delegate to get the estimated accuracy of the `Classifier`.
+        Tells the delegate that the `Classifier` is about to be deployed.
 
         - Parameter state: state that triggered the event.
-
-        - Returns: Estimated accureacy
+     
+        - Returns: `true` if the `Classifier` can be deployed.
      */
-    func stateCalculateClassificationAccuracy(_ state: State) -> Double
+    func stateWillDeployClassifier(_ state: State) -> Bool
 
     /**
         Ask delegate to get a prediction.

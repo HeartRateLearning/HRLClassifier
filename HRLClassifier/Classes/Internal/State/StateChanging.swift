@@ -15,6 +15,9 @@ protocol StateChanging: class {
     /// Change to: Adding Training Data.
     func changeToAddingTrainingData()
 
+    /// Change to: Pre-deployed
+    func changeToPreDeployed()
+
     /// Change to: Predicting Working Out.
     func changeToPredictingWorkingOut()
 }

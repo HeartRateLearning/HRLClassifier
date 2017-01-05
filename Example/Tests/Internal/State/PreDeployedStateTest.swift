@@ -1,8 +1,8 @@
 //
-//  PredictingWorkingOutStateTest.swift
+//  PreDeployedStateTest.swift
 //  HRLClassifier
 //
-//  Created by Enrique de la Torre (dev) on 02/01/2017.
+//  Created by Enrique de la Torre (dev) on 05/01/2017.
 //  Copyright © 2017 CocoaPods. All rights reserved.
 //
 
@@ -10,9 +10,9 @@ import XCTest
 
 @testable import HRLClassifier
 
-class PredictingWorkingOutStateTest: XCTestCase {
-    
-    let sut = PredictingWorkingOutState()
+class PreDeployedStateTest: XCTestCase {
+
+    let sut = PreDeployedState()
 
     let delegate = StateDelegateTestDouble()
     let stateChanger = StateChangingTestDouble()
@@ -47,7 +47,30 @@ class PredictingWorkingOutStateTest: XCTestCase {
         XCTAssertEqual(stateChanger.changeToPreDeployedCount, 0)
     }
 
-    func testSutThatAllowsDeploying_deployClassifier_neitherForwardToDelegateNorChangeState() {
+    func testSutWithoutDelegate_deployClassifier_doesNotChangeState() {
+        // given
+        sut.delegate = nil
+
+        // when
+        sut.deployClassifier()
+
+        // then
+        XCTAssertEqual(stateChanger.changeToPredictingWorkingOutCount, 0)
+    }
+
+    func testSutThatDoesNotAllowDeploying_deployClassifier_doesNotchangeState() {
+        // given
+        delegate.willDeployClassifierResult = false
+
+        // when
+        sut.deployClassifier()
+
+        // then
+        XCTAssertEqual(delegate.willDeployClassifierCount, 1)
+        XCTAssertEqual(stateChanger.changeToPredictingWorkingOutCount, 0)
+    }
+
+    func testSutThatAllowsTraining_trainClassifier_changeState() {
         // given
         delegate.willDeployClassifierResult = true
 
@@ -55,14 +78,11 @@ class PredictingWorkingOutStateTest: XCTestCase {
         sut.deployClassifier()
 
         // then
-        XCTAssertEqual(delegate.willDeployClassifierCount, 0)
-        XCTAssertEqual(stateChanger.changeToPredictingWorkingOutCount, 0)
+        XCTAssertEqual(delegate.willDeployClassifierCount, 1)
+        XCTAssertEqual(stateChanger.changeToPredictingWorkingOutCount, 1)
     }
 
-    func testSutWithoutDelegate_predictedWorkingOut_returnUnkwnown() {
-        // given
-        sut.delegate = nil
-
+    func testConfiguredSut_predictedWorkingOut_returnUnkwnown() {
         // when
         let result = sut.predictedWorkingOut(for: anyRecord)
 
@@ -70,12 +90,12 @@ class PredictingWorkingOutStateTest: XCTestCase {
         XCTAssertEqual(result, .unknown)
     }
 
-    func testConfiguredSut_predictedWorkingOut_forwardToDelegate() {
+    func testConfiguredSut_predictedWorkingOut_doesNotForwardToDelegate() {
         // when
         _ = sut.predictedWorkingOut(for: anyRecord)
 
         // then
-        XCTAssertEqual(delegate.predictWorkingOutForRecordCount, 1)
+        XCTAssertEqual(delegate.predictWorkingOutForRecordCount, 0)
     }
 
     func testConfiguredSut_rollbackClassifier_changesState() {
@@ -85,4 +105,5 @@ class PredictingWorkingOutStateTest: XCTestCase {
         // then
         XCTAssertEqual(stateChanger.changeToAddingTrainingDataCount, 1)
     }
+
 }
