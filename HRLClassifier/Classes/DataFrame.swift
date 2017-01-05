@@ -13,7 +13,7 @@ import HRLAlgorithms
 /// heart rates at different moments and if the user was working out or not.
 public final class DataFrame: NSObject {
     fileprivate var records: [Record] = []
-    fileprivate var classes: [UInt] = []
+    fileprivate var classes: [HRLClass] = []
 
     /**
         Each position of `recordCountPerWeekday` represents a day of the week
@@ -58,7 +58,7 @@ extension DataFrame: HRLMatrixDataSource {
         return record.value(at: column)
     }
 
-    public func `class`(forRow row: HRLSize) -> UInt {
+    public func `class`(forRow row: HRLSize) -> HRLClass {
         return classes[Int(row)]
     }
 }

@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import HRLAlgorithms
 
 /// Value returned after predicting if a person is working out.
-public enum WorkingOut: UInt {
+public enum WorkingOut: HRLClass {
     /// The `Classifier` does not know: is it trained?, ...
     case unknown = 0
     /// The user **is NOT** working out.

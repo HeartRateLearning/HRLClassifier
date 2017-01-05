@@ -8,6 +8,7 @@
 
 import XCTest
 
+@testable import HRLAlgorithms
 @testable import HRLClassifier
 
 class RecordTest: XCTestCase {
@@ -163,10 +164,10 @@ class RecordTest: XCTestCase {
 
 private extension RecordTest {
     enum Constants {
-        static let weekDayIndex = UInt64(0)
-        static let timeIntervalFromMidnightIndex = UInt64(1)
-        static let bpmIndex = UInt64(2)
-        static let valueCount = UInt64(3)
+        static let weekDayIndex = HRLSize(0)
+        static let timeIntervalFromMidnightIndex = HRLSize(1)
+        static let bpmIndex = HRLSize(2)
+        static let valueCount = HRLSize(3)
 
         static let anyBPM = Float(50)
         static let knownBPM = Float(72)

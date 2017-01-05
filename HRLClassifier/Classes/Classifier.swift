@@ -15,6 +15,7 @@ public final class Classifier {
     /// Errors produced while training the `Classifier`
     enum TrainingError: Error {
         case notEnoughRecordsPerWeekdayInDataFrame
+        case trainedClassifierCanNotMakeAccuratePredictions
     }
 
     private var classifier: HRLKNNClassifier?
@@ -39,10 +40,21 @@ public final class Classifier {
         let matrix = HRLMatrix()
         matrix.fill(with: dataFrame)
 
-        let otherClassifier = HRLKNNClassifier()
-        otherClassifier.train(with: matrix)
+        var trainingMatrix: HRLMatrix?
+        var testMatrix: HRLMatrix?
+        matrix.split(intoTraining: &trainingMatrix,
+                     test: &testMatrix,
+                     trainingBias: Constants.trainingBias)
 
-        classifier = otherClassifier
+        let nextClassifier = HRLKNNClassifier()
+        nextClassifier.train(with: trainingMatrix!)
+
+        let accuracy = nextClassifier.calculateClassificationAccuracy(using: testMatrix!)
+        guard accuracy >= Constants.minAccuracyToMakePredictions else {
+            throw TrainingError.trainedClassifierCanNotMakeAccuratePredictions
+        }
+
+        classifier = nextClassifier
     }
 
     /**
@@ -63,7 +75,9 @@ public final class Classifier {
 
 private extension Classifier {
     enum Constants {
+        static let trainingBias = HRLFloat(0.75)
         static let minRecordsPerWeekday = 80
+        static let minAccuracyToMakePredictions = HRLFloat(0.9)
     }
 
     func isThereEnoughRecordsPerWeekday(in dataFrame: DataFrame) -> Bool {
