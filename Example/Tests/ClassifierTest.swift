@@ -11,10 +11,17 @@ import XCTest
 @testable import HRLClassifier
 
 class ClassifierTest: XCTestCase {
-    func testInitializedSut_predictedWorkingOut_returnUnknown() {
-        // given
-        let sut = Classifier()
+    let sut = Classifier()
 
+    func testEmptyDataFrame_train_throwError() {
+        // given
+        let dataFrame = DataFrame()
+
+        // when / then
+        XCTAssertThrowsError(try sut.train(with: dataFrame))
+    }
+
+    func testNonTrainedSut_predictedWorkingOut_returnUnknown() {
         // when
         let result = sut.predictedWorkingOut(for: anyRecord())
 

@@ -12,6 +12,11 @@ import HRLAlgorithms
 /// Train a `Classifier` with a `Dataframe` and then pass it a `Record`
 /// to predict if a person was working out or not.
 public final class Classifier {
+    /// Errors produced while training the `Classifier`
+    enum TrainingError: Error {
+        case notEnoughRecordsPerWeekdayInDataFrame
+    }
+
     private var classifier: HRLKNNClassifier?
 
     /**
@@ -26,7 +31,11 @@ public final class Classifier {
      
         - Parameter dataFrame: A `DataFrame` instance
      */
-    public func train(with dataFrame:DataFrame) {
+    public func train(with dataFrame:DataFrame) throws {
+        guard isThereEnoughRecordsPerWeekday(in: dataFrame) else {
+            throw TrainingError.notEnoughRecordsPerWeekdayInDataFrame
+        }
+
         let matrix = HRLMatrix()
         matrix.fill(with: dataFrame)
 
@@ -49,5 +58,17 @@ public final class Classifier {
         }
 
         return WorkingOut(rawValue: predictedClass)!
+    }
+}
+
+private extension Classifier {
+    enum Constants {
+        static let minRecordsPerWeekday = 80
+    }
+
+    func isThereEnoughRecordsPerWeekday(in dataFrame: DataFrame) -> Bool {
+        let recordCountPerWeekday = dataFrame.recordCountPerWeekday
+
+        return recordCountPerWeekday.reduce(true, { $0 && ($1 >= Constants.minRecordsPerWeekday)})
     }
 }
