@@ -48,6 +48,9 @@ for i in 0..<7 {
 // Train classifier
 classifier.train()
 
+// Deploy classifier
+classifier.deploy()
+
 // Predict
 let date = baseDate.addingTimeInterval(TimeInterval(7 * dayInterval))
 let bpm = Float(arc4random_uniform(UInt32(maxBPM)))
