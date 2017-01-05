@@ -22,40 +22,48 @@ pod "HRLClassifier"
 ## Usage
 
 ```swift
-let date = Date()
+let baseDate = Date(timeIntervalSinceReferenceDate: 0)
+let dayInterval = 24 * 60 * 60
+let maxBPM = 200
 
+// Fill data frame
 let dataFrame = DataFrame()
-dataFrame.append(record: Record(date:date.addingTimeInterval(-6 * 60 * 60),
-                                bpm:Float(100)),
-                 isWorkingOut: false)
-dataFrame.append(record: Record(date:date.addingTimeInterval(-5 * 60 * 60),
-                                bpm:Float(140)),
-                 isWorkingOut: true)
-dataFrame.append(record: Record(date:date.addingTimeInterval(-4 * 60 * 60),
-                                bpm:Float(120)),
-                 isWorkingOut: true)
-dataFrame.append(record: Record(date:date.addingTimeInterval(-3 * 60 * 60),
-                                bpm:Float(70)),
-                 isWorkingOut: false)
-dataFrame.append(record: Record(date:date.addingTimeInterval(-2 * 60 * 60),
-                                bpm:Float(55)),
-                 isWorkingOut: false)
-dataFrame.append(record: Record(date:date.addingTimeInterval(-1 * 60 * 60),
-                                bpm:Float(125)),
-                 isWorkingOut: true)
 
+for i in 0..<7 {
+    for _ in 0..<Classifier.Defaults.minRecordsPerWeekday {
+        let timeInterval = i * dayInterval + Int(arc4random_uniform(UInt32(dayInterval)))
+
+        let date = baseDate.addingTimeInterval(TimeInterval(timeInterval))
+        let bpm = Float(arc4random_uniform(UInt32(maxBPM)))
+        let record = Record(date: date, bpm: bpm)
+
+        let isWorkingOut = arc4random_uniform(2) == 1 ? true : false
+
+        dataFrame.append(record: record, isWorkingOut: isWorkingOut)
+    }
+}
+
+// Train classifier
 let classifier = Classifier()
-classifier.train(with: dataFrame)
 
-let predictDate = date.addingTimeInterval(-3.5 * 60 * 60)
-let predictBPM = Float(130)
-let isWorkingOut = classifier.predictedWorkingOut(for: Record(date:predictDate,
-                                                              bpm:predictBPM))
+do {
+    try classifier.train(with: dataFrame)
+} catch Classifier.TrainingError.trainedClassifierCanNotMakeAccuratePredictions {
+    print("Given that all records are created in a random fashion, this is expected")
+} catch {
+    print("Ups ... something bad happened")
+}
 
-print("At \(predictDate) with \(predictBPM) bpm, is user working out? \(isWorkingOut)")
+// Predict
+let date = baseDate.addingTimeInterval(TimeInterval(7 * dayInterval))
+let bpm = Float(arc4random_uniform(UInt32(maxBPM)))
+let record = Record(date: date, bpm: bpm)
+
+let prediction = classifier.predictedWorkingOut(for: record)
+
+print("At \(date) with \(bpm) bpm, is user working out? \(prediction)")
 ```
 
 ## License
 
 HRLClassifier is available under the MIT license. See the LICENSE file for more info.
-
