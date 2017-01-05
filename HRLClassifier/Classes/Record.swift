@@ -11,22 +11,31 @@ import HRLAlgorithms
 
 /// A heart rate record as expected by a `Classifier` or a `DataFrame`.
 public final class Record: NSObject {
+    /**
+        Day of the week when the heart rate was recorded.
+
+        Range: 1...7, 1 = Sunday, 2 = Monday, ...
+     */
+    public let weekday: Int
+
     fileprivate let values: [HRLValue]
 
     fileprivate static let calendar = defaultCalendar()
 
     /**
         Initializes a new heart rate record.
-     
+
         - Parameters:
-            - date: Date when the heart rate was recorded
-            - bpm: Beats Per Minute when the heart rate was recorded
-     
+            - date: Date when the heart rate was recorded.
+            - bpm: Beats Per Minute when the heart rate was recorded.
+
         - Returns: A new heart rate record.
      */
     public init(date: Date, bpm: Float) {
+        weekday = Record.weekday(from: date)
+
         values = [
-            HRLValue(Record.weekday(from: date)),
+            HRLValue(weekday),
             HRLValue(Record.timeIntervalFromMidnight(to: date)),
             HRLValue(bpm)
         ]

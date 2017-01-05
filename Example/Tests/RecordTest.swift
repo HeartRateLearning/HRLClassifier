@@ -87,31 +87,77 @@ class RecordTest: XCTestCase {
         XCTAssertEqual(record.value(at: Constants.timeIntervalFromMidnightIndex), timeInterval)
     }
 
-    func testDatesForEachWeekDay_initRecordsWithDates_createVectorsWith7DifferentsWeekDayValues() {
+    func testDatesForEachWeekDay_initRecordsWithDates_eachRecordHasTheExpectedWeekdayValue() {
         // given
-        let anyDate = RecordTest.anyDate()
+        let dayInterval = TimeInterval(24 * 60 * 60)
 
-        var dates: [Date]  = []
-        for i in 0..<14 {
-            let timeInterval = TimeInterval(i * 24 * 60 * 60)
-            let date = anyDate.addingTimeInterval(timeInterval)
-
-            dates.append(date)
-        }
+        let sunday = RecordTest.anySunday()
+        let monday = sunday.addingTimeInterval(dayInterval)
+        let tuesday = monday.addingTimeInterval(dayInterval)
+        let wednesday = tuesday.addingTimeInterval(dayInterval)
+        let thursday = wednesday.addingTimeInterval(dayInterval)
+        let friday = thursday.addingTimeInterval(dayInterval)
+        let saturday = friday.addingTimeInterval(dayInterval)
 
         let bpm = Constants.anyBPM
 
         // when
-        let repeatedWeekDays = dates.map { date -> Double in
-            let record = Record(date: date, bpm: bpm)
-
-            return record.value(at: Constants.weekDayIndex)
-        }
-
-        let weekDays = Set(repeatedWeekDays)
+        let sundayRecord = Record(date: sunday, bpm: bpm)
+        let mondayRecord = Record(date: monday, bpm: bpm)
+        let tuesdayRecord = Record(date: tuesday, bpm: bpm)
+        let wednesdayRecord = Record(date: wednesday, bpm: bpm)
+        let thursdayRecord = Record(date: thursday, bpm: bpm)
+        let fridayRecord = Record(date: friday, bpm: bpm)
+        let saturdayRecord = Record(date: saturday, bpm: bpm)
 
         // then
-        XCTAssertEqual(weekDays.count, 7)
+        XCTAssertEqual(sundayRecord.weekday, 1)
+        XCTAssertEqual(mondayRecord.weekday, 2)
+        XCTAssertEqual(tuesdayRecord.weekday, 3)
+        XCTAssertEqual(wednesdayRecord.weekday, 4)
+        XCTAssertEqual(thursdayRecord.weekday, 5)
+        XCTAssertEqual(fridayRecord.weekday, 6)
+        XCTAssertEqual(saturdayRecord.weekday, 7)
+    }
+
+    func testDatesForEachWeekDay_initRecordsWithDates_createVectorsWithSameWeekDaysAsRecords() {
+        // given
+        let dayInterval = TimeInterval(24 * 60 * 60)
+
+        let sunday = RecordTest.anySunday()
+        let monday = sunday.addingTimeInterval(dayInterval)
+        let tuesday = monday.addingTimeInterval(dayInterval)
+        let wednesday = tuesday.addingTimeInterval(dayInterval)
+        let thursday = wednesday.addingTimeInterval(dayInterval)
+        let friday = thursday.addingTimeInterval(dayInterval)
+        let saturday = friday.addingTimeInterval(dayInterval)
+
+        let bpm = Constants.anyBPM
+
+        // when
+        let sundayRecord = Record(date: sunday, bpm: bpm)
+        let mondayRecord = Record(date: monday, bpm: bpm)
+        let tuesdayRecord = Record(date: tuesday, bpm: bpm)
+        let wednesdayRecord = Record(date: wednesday, bpm: bpm)
+        let thursdayRecord = Record(date: thursday, bpm: bpm)
+        let fridayRecord = Record(date: friday, bpm: bpm)
+        let saturdayRecord = Record(date: saturday, bpm: bpm)
+
+        // then
+        XCTAssertEqual(Double(sundayRecord.weekday),
+                       sundayRecord.value(at: Constants.weekDayIndex))
+        XCTAssertEqual(Double(mondayRecord.weekday),
+                       mondayRecord.value(at: Constants.weekDayIndex))
+        XCTAssertEqual(Double(tuesdayRecord.weekday),
+                       tuesdayRecord.value(at: Constants.weekDayIndex))
+        XCTAssertEqual(Double(wednesdayRecord.weekday),
+                       wednesdayRecord.value(at: Constants.weekDayIndex))
+        XCTAssertEqual(Double(thursdayRecord.weekday),
+                       thursdayRecord.value(at: Constants.weekDayIndex))
+        XCTAssertEqual(Double(fridayRecord.weekday),
+                       fridayRecord.value(at: Constants.weekDayIndex))
+        XCTAssertEqual(Double(saturdayRecord.weekday),
+                       saturdayRecord.value(at: Constants.weekDayIndex))
     }
 }
 
@@ -128,6 +174,16 @@ private extension RecordTest {
 
     static func anyDate() -> Date {
         return Date(timeIntervalSinceReferenceDate: 0)
+    }
+
+    static func anySunday() -> Date {
+        return RecordTest.date(secondsFromGMT: 0,
+                               hour: 1,
+                               minute: 0,
+                               second: 0,
+                               year: 2017,
+                               month: 1,
+                               day: 1)
     }
 
     static func date(secondsFromGMT: Int,
