@@ -41,7 +41,7 @@ public final class DataFrame: NSObject {
     }
 }
 
-extension DataFrame: HRLMatrixDataSource {
+extension DataFrame: HRLMatrix {
     public func rowCount() -> HRLSize {
         return HRLSize(records.count)
     }

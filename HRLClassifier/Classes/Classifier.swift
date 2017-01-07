@@ -29,7 +29,7 @@ public final class Classifier {
         case trainedClassifierCanNotMakeAccuratePredictions
     }
 
-    private var classifier: HRLKNNClassifier?
+    private var classifier: HRLTrainedKNNClassifier?
 
     /**
         Initializes a new `Classifier`.
@@ -55,19 +55,14 @@ public final class Classifier {
             throw TrainingError.notEnoughRecordsPerWeekdayInDataFrame
         }
 
-        let matrix = HRLMatrix()
-        matrix.fill(with: dataFrame)
+        let splitter = HRLMatrixSplitter()
+        let splittedMatrix = splitter.splittedMatrix(with: dataFrame,
+                                                     trainingBias: Constants.trainingBias)
 
-        var trainingMatrix: HRLMatrix?
-        var testMatrix: HRLMatrix?
-        matrix.split(intoTraining: &trainingMatrix,
-                     test: &testMatrix,
-                     trainingBias: Constants.trainingBias)
+        let factory = HRLTrainedKNNClassifierFactory()
+        let nextClassifier = factory.makeTrainedKNNClassifier(with: splittedMatrix.trainingMatrix)
 
-        let nextClassifier = HRLKNNClassifier()
-        nextClassifier.train(with: trainingMatrix!)
-
-        let accuracy = nextClassifier.calculateClassificationAccuracy(using: testMatrix!)
+        let accuracy = nextClassifier.estimatedAccuracy(with: splittedMatrix.testMatrix)
         guard accuracy >= Constants.minAccuracyToMakePredictions else {
             throw TrainingError.trainedClassifierCanNotMakeAccuratePredictions
         }
@@ -83,7 +78,7 @@ public final class Classifier {
         - Returns: `WorkingOut.true` only if the `Classifier` estimates the user was working out.
      */
     public func predictedWorkingOut(for record: Record) -> WorkingOut {
-        guard let predictedClass = classifier?.predictClass(for: record) else {
+        guard let predictedClass = classifier?.predictedClass(for: record) else {
             return .unknown
         }
 
