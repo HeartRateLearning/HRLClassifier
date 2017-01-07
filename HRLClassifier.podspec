@@ -17,8 +17,6 @@ Use Machine Learning to predict if a person is working out based of his/her hear
 
   s.source_files = 'HRLClassifier/Classes/**/*'
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-
-  s.dependency 'HRLAlgorithms', '~> 0.1'
+  s.dependency 'HRLAlgorithms', '~> 1.0'
 end
 

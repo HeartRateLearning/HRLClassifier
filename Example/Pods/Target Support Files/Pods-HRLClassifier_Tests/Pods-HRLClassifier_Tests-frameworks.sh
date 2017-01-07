@@ -84,8 +84,10 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/HRLAlgorithms/HRLAlgorithms.framework"
   install_framework "$BUILT_PRODUCTS_DIR/HRLClassifier/HRLClassifier.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/HRLAlgorithms/HRLAlgorithms.framework"
   install_framework "$BUILT_PRODUCTS_DIR/HRLClassifier/HRLClassifier.framework"
 fi
