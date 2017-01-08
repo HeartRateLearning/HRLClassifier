@@ -17,8 +17,8 @@
 		FF5B51D51E22C8D50035D14A /* ClassifierFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B51D41E22C8D50035D14A /* ClassifierFactoryTest.swift */; };
 		FFA999281E1466EF00BFDD09 /* DataFrameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA999251E1466EF00BFDD09 /* DataFrameTest.swift */; };
 		FFA999291E1466EF00BFDD09 /* RecordTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA999261E1466EF00BFDD09 /* RecordTest.swift */; };
-		FFA9992A1E1466EF00BFDD09 /* WorkingOutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA999271E1466EF00BFDD09 /* WorkingOutTest.swift */; };
-		FFE8C8B51E1EF7A100338E10 /* ClassifierTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE8C8B41E1EF7A100338E10 /* ClassifierTest.swift */; };
+		FFA9AC951E22E01E00F81886 /* ClassifierTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA9AC931E22E01E00F81886 /* ClassifierTest.swift */; };
+		FFA9AC961E22E01E00F81886 /* WorkingOutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA9AC941E22E01E00F81886 /* WorkingOutTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,8 +39,8 @@
 		FF5B51D41E22C8D50035D14A /* ClassifierFactoryTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifierFactoryTest.swift; sourceTree = "<group>"; };
 		FFA999251E1466EF00BFDD09 /* DataFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFrameTest.swift; sourceTree = "<group>"; };
 		FFA999261E1466EF00BFDD09 /* RecordTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTest.swift; sourceTree = "<group>"; };
-		FFA999271E1466EF00BFDD09 /* WorkingOutTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingOutTest.swift; sourceTree = "<group>"; };
-		FFE8C8B41E1EF7A100338E10 /* ClassifierTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifierTest.swift; sourceTree = "<group>"; };
+		FFA9AC931E22E01E00F81886 /* ClassifierTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifierTest.swift; sourceTree = "<group>"; };
+		FFA9AC941E22E01E00F81886 /* WorkingOutTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingOutTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,12 +95,11 @@
 			isa = PBXGroup;
 			children = (
 				FF5B51C61E22C8990035D14A /* Helpers */,
+				FFA9AC921E22E00800F81886 /* Internal */,
 				FF5B51CB1E22C8B20035D14A /* TestDoubles */,
 				FF5B51D41E22C8D50035D14A /* ClassifierFactoryTest.swift */,
-				FFE8C8B41E1EF7A100338E10 /* ClassifierTest.swift */,
 				FFA999251E1466EF00BFDD09 /* DataFrameTest.swift */,
 				FFA999261E1466EF00BFDD09 /* RecordTest.swift */,
-				FFA999271E1466EF00BFDD09 /* WorkingOutTest.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -142,6 +141,15 @@
 				FF5B51CF1E22C8CC0035D14A /* TestDoubleTrainedKNNClassifierFactory.swift */,
 			);
 			path = TestDoubles;
+			sourceTree = "<group>";
+		};
+		FFA9AC921E22E00800F81886 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				FFA9AC931E22E01E00F81886 /* ClassifierTest.swift */,
+				FFA9AC941E22E01E00F81886 /* WorkingOutTest.swift */,
+			);
+			path = Internal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,12 +275,12 @@
 			files = (
 				FF5B51D11E22C8CC0035D14A /* TestDoubleMatrixSplitter.swift in Sources */,
 				FF5B51D01E22C8CC0035D14A /* TestDoubleMatrix.swift in Sources */,
+				FFA9AC961E22E01E00F81886 /* WorkingOutTest.swift in Sources */,
+				FFA9AC951E22E01E00F81886 /* ClassifierTest.swift in Sources */,
 				FF5B51D31E22C8CC0035D14A /* TestDoubleTrainedKNNClassifierFactory.swift in Sources */,
 				FF5B51D51E22C8D50035D14A /* ClassifierFactoryTest.swift in Sources */,
 				FF5B51D21E22C8CC0035D14A /* TestDoubleTrainedKNNClassifier.swift in Sources */,
-				FFE8C8B51E1EF7A100338E10 /* ClassifierTest.swift in Sources */,
 				FF5B51C91E22C8A90035D14A /* HelperDate.swift in Sources */,
-				FFA9992A1E1466EF00BFDD09 /* WorkingOutTest.swift in Sources */,
 				FFA999281E1466EF00BFDD09 /* DataFrameTest.swift in Sources */,
 				FF5B51CA1E22C8A90035D14A /* HelperRecord.swift in Sources */,
 				FFA999291E1466EF00BFDD09 /* RecordTest.swift in Sources */,

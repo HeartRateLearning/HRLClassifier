@@ -9,20 +9,6 @@
 import Foundation
 import HRLAlgorithms
 
-/// A class that conforms to `ClassifierProtocol` is able to predict if
-/// a person is working out or not based on the information provided in 
-/// a `Record`.
-public protocol ClassifierProtocol {
-    /**
-        Use this method to make predictions.
-
-        - Parameter record: A `Record` instance.
-
-        - Returns: `true` if the `Classifier` estimates the user was working out.
-     */
-    func predictedWorkingOut(for record: Record) -> Bool
-}
-
 /// Implementation of protocol: `ClassifierProtocol`
 final class Classifier {
     fileprivate let trainedKNNClassifier: HRLTrainedKNNClassifier

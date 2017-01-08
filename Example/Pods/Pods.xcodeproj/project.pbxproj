@@ -34,7 +34,6 @@
 		4B3C4ABF58FC277069F19A2D56A3293B /* LNKMatrixCSV.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C336E40FA538DE528822B3E1B61DBBC /* LNKMatrixCSV.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		4DBE9BA4F214776FE6F1518FF5195AB6 /* LNKConfusionMatrix.h in Headers */ = {isa = PBXBuildFile; fileRef = DCD895E7CA1A26CB577D9AF0A657397B /* LNKConfusionMatrix.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		4F695FC21C23CEDBAC958C1F21EF9DBE /* LNKMemoryBufferManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1CCBC3BD69CB90252421D133D037E8 /* LNKMemoryBufferManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		549F4AF57E3A4B62C551ADC5F9C03D1A /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8AE0E739B57406A51DB574B9D5C0B2 /* Classifier.swift */; };
 		580408DED7010EDEBB53FF27BB77CE03 /* LNKOptimization.h in Headers */ = {isa = PBXBuildFile; fileRef = BCF7B29CAA718CD1B7CB0E6AA808533A /* LNKOptimization.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		5B51EA9772DD535C50AC4BAE9EA28E89 /* LNKConfusionMatrixPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FD0A408C7EE6684A892A2D47236B295 /* LNKConfusionMatrixPrivate.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		5DFCBC212B1706F217CBA08D6451415F /* _LNKKNNClassifierAC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2919A316AC1CAA46FBC7AFDEB993703 /* _LNKKNNClassifierAC.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -85,7 +84,6 @@
 		C2539EADE87BD378DFDF6A57A2A92B9C /* LNKMemoryBufferManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C89182C0299D58B54FCD1C6D2680EF40 /* LNKMemoryBufferManager.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		C605D40B6B30B84533CD5F1C342E8AFC /* LNKPredictor.h in Headers */ = {isa = PBXBuildFile; fileRef = DB0889A270DC46EBA9D08D3EE3E3115A /* LNKPredictor.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		D5923AAA097595974E38CAFFA3C75CCA /* arithmetic_sse_double.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DD7DDF48240F781B402790630EF2A33 /* arithmetic_sse_double.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		D98BE21543A4974B7BCFDEF496C29ADD /* WorkingOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664D39E68100478A4B081EAD5B61BDDA /* WorkingOut.swift */; };
 		E1672D970E878C023EDBE6B9281021E1 /* LNKGoldenSectionSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E498A963C16450D8132AAB692E6F8AD /* LNKGoldenSectionSearch.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E9E8C6FD7B1389DC451C72ED33CAEEA7 /* LNKUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 059E522206ACB742FC4F5A6121B15A28 /* LNKUtilities.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		EF745876568EB463AACC9FC1D18B508F /* LNKClassifierPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 88C251A370651D7A64408109839F6427 /* LNKClassifierPrivate.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -96,6 +94,9 @@
 		F83FF60EFA4A24887043CE115C41D40A /* LNKRegularizationConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 52557547A296313F48C8012336AB7982 /* LNKRegularizationConfiguration.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FAB20FB4A20E2E595F457D388FFA8154 /* LNKKNNClassifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 84185BD5AFE6DF0CFB282ADE897D76A5 /* LNKKNNClassifier.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FF5B51C51E22C8790035D14A /* ClassifierFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B51C41E22C8790035D14A /* ClassifierFactory.swift */; };
+		FFA9AC9A1E22E04700F81886 /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA9AC981E22E04700F81886 /* Classifier.swift */; };
+		FFA9AC9B1E22E04700F81886 /* WorkingOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA9AC991E22E04700F81886 /* WorkingOut.swift */; };
+		FFA9AC9D1E22E04D00F81886 /* ClassifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA9AC9C1E22E04D00F81886 /* ClassifierProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,11 +167,9 @@
 		550871F26EF67587A3B10C2166A3C886 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B8E726D78BB86BA2E8718A7462B48BA /* Record.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		5FD0A408C7EE6684A892A2D47236B295 /* LNKConfusionMatrixPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LNKConfusionMatrixPrivate.h; path = HRLAlgorithms/Submodules/LearnKit/LearnKit/Core/LNKConfusionMatrixPrivate.h; sourceTree = "<group>"; };
-		664D39E68100478A4B081EAD5B61BDDA /* WorkingOut.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WorkingOut.swift; sourceTree = "<group>"; };
 		74808CE417D2C05649A4A9ECC5BD2832 /* LNKAccelerateGradient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LNKAccelerateGradient.m; path = "HRLAlgorithms/Submodules/LearnKit/LearnKit/Accelerate Extensions/LNKAccelerateGradient.m"; sourceTree = "<group>"; };
 		77438D14B44A4BC62D9FAE1A72BA3FE5 /* LNKMatrixPCA.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LNKMatrixPCA.h; path = HRLAlgorithms/Submodules/LearnKit/LearnKit/Core/LNKMatrixPCA.h; sourceTree = "<group>"; };
 		7C52892ACCD4745445D7D33F972A9F1B /* Config.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Config.h; path = HRLAlgorithms/Submodules/LearnKit/LearnKit/Config.h; sourceTree = "<group>"; };
-		7D8AE0E739B57406A51DB574B9D5C0B2 /* Classifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
 		7DA2C09FECA1D91FF864FC4FDE64EDAE /* HRLClassifier.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = HRLClassifier.modulemap; sourceTree = "<group>"; };
 		7F589694E915AEF9D48512CDFB758470 /* HRLClassifier-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HRLClassifier-dummy.m"; sourceTree = "<group>"; };
 		84185BD5AFE6DF0CFB282ADE897D76A5 /* LNKKNNClassifier.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LNKKNNClassifier.m; path = "HRLAlgorithms/Submodules/LearnKit/LearnKit/K-NN/LNKKNNClassifier.m"; sourceTree = "<group>"; };
@@ -230,6 +229,9 @@
 		F437BC88B865C39B57E1567972B62DBA /* LNKKNNClassifier+HRLTrainedKNNClassifier.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LNKKNNClassifier+HRLTrainedKNNClassifier.h"; path = "HRLAlgorithms/Classes/K-NN/Private/LNKKNNClassifier+HRLTrainedKNNClassifier.h"; sourceTree = "<group>"; };
 		F5FA2E0DC7BCEE0482331B759824B13D /* LNKAccelerate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LNKAccelerate.m; path = "HRLAlgorithms/Submodules/LearnKit/LearnKit/Accelerate Extensions/LNKAccelerate.m"; sourceTree = "<group>"; };
 		FF5B51C41E22C8790035D14A /* ClassifierFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifierFactory.swift; sourceTree = "<group>"; };
+		FFA9AC981E22E04700F81886 /* Classifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
+		FFA9AC991E22E04700F81886 /* WorkingOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingOut.swift; sourceTree = "<group>"; };
+		FFA9AC9C1E22E04D00F81886 /* ClassifierProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifierProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -386,11 +388,11 @@
 		56E5B794B32BC4569549F2B0D24136F7 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				7D8AE0E739B57406A51DB574B9D5C0B2 /* Classifier.swift */,
+				FFA9AC971E22E03300F81886 /* Internal */,
 				FF5B51C41E22C8790035D14A /* ClassifierFactory.swift */,
+				FFA9AC9C1E22E04D00F81886 /* ClassifierProtocol.swift */,
 				29B39DC252028F58741F3B07DEFE03E6 /* DataFrame.swift */,
 				5B8E726D78BB86BA2E8718A7462B48BA /* Record.swift */,
-				664D39E68100478A4B081EAD5B61BDDA /* WorkingOut.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -480,6 +482,15 @@
 				E6767657AF63BCD1177A7C873F3BFA35 /* HRLClassifier */,
 			);
 			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		FFA9AC971E22E03300F81886 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				FFA9AC981E22E04700F81886 /* Classifier.swift */,
+				FFA9AC991E22E04700F81886 /* WorkingOut.swift */,
+			);
+			path = Internal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -647,6 +658,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFA9AC9A1E22E04700F81886 /* Classifier.swift in Sources */,
 				5DFCBC212B1706F217CBA08D6451415F /* _LNKKNNClassifierAC.m in Sources */,
 				156BE4E7637CAB45BF587958AC76F903 /* fmincg.m in Sources */,
 				0DF782BFECD031B42761FBD06F7FA06F /* HRLAlgorithms-dummy.m in Sources */,
@@ -676,9 +688,11 @@
 				A7D5CF78001BF5245AFCE2021DFDAFB6 /* LNKOptimization.m in Sources */,
 				96634D7D0CE99C04E4D79C2CE9FC3FA1 /* LNKOptimizationAlgorithm.m in Sources */,
 				B2900451222D938AAFD5F8F6476F8AE8 /* LNKPredictor.m in Sources */,
+				FFA9AC9B1E22E04700F81886 /* WorkingOut.swift in Sources */,
 				F83FF60EFA4A24887043CE115C41D40A /* LNKRegularizationConfiguration.m in Sources */,
 				368C693224962005FCFEE0ED32409652 /* LNKTypes.m in Sources */,
 				FF5B51C51E22C8790035D14A /* ClassifierFactory.swift in Sources */,
+				FFA9AC9D1E22E04D00F81886 /* ClassifierProtocol.swift in Sources */,
 				5DFF654B31D1C4DDC58BD792AA9B28A5 /* LNKUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -687,11 +701,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				549F4AF57E3A4B62C551ADC5F9C03D1A /* Classifier.swift in Sources */,
 				734FFB20DDA63AF7A40C5A7C84EF7532 /* DataFrame.swift in Sources */,
 				0A667992C71A8853A7F10EBAA8B03C1C /* HRLClassifier-dummy.m in Sources */,
 				44B32D961F53074D7BE608BACAA3F9E0 /* Record.swift in Sources */,
-				D98BE21543A4974B7BCFDEF496C29ADD /* WorkingOut.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
