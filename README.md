@@ -22,6 +22,8 @@ pod "HRLClassifier"
 ## Usage
 
 ```swift
+import HRLClassifier
+
 let baseDate = Date(timeIntervalSinceReferenceDate: 0)
 let dayInterval = 24 * 60 * 60
 let maxBPM = 200
@@ -30,7 +32,7 @@ let maxBPM = 200
 let dataFrame = DataFrame()
 
 for i in 0..<7 {
-    for _ in 0..<Classifier.Defaults.minRecordsPerWeekday {
+    for _ in 0..<80 {
         let timeInterval = i * dayInterval + Int(arc4random_uniform(UInt32(dayInterval)))
 
         let date = baseDate.addingTimeInterval(TimeInterval(timeInterval))
@@ -43,15 +45,11 @@ for i in 0..<7 {
     }
 }
 
-// Train classifier
-let classifier = Classifier()
-
-do {
-    try classifier.train(with: dataFrame)
-} catch Classifier.TrainingError.trainedClassifierCanNotMakeAccuratePredictions {
+// Make classifier
+guard let classifier = try? ClassifierFactory().makeClassifier(with: dataFrame) else {
     print("Given that all records are created in a random fashion, this is expected")
-} catch {
-    print("Ups ... something bad happened")
+
+    return
 }
 
 // Predict

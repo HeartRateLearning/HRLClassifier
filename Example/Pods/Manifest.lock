@@ -1,6 +1,6 @@
 PODS:
-  - HRLAlgorithms (1.0.0)
-  - HRLClassifier (1.0.0):
+  - HRLAlgorithms (1.0.1)
+  - HRLClassifier (2.0.0):
     - HRLAlgorithms (~> 1.0)
 
 DEPENDENCIES:
@@ -11,8 +11,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  HRLAlgorithms: 817ad890e31274836c712bf0e20dc097f21edd12
-  HRLClassifier: ba03d60bc65a13fd657ecd5b18e6e1b88bf32fdb
+  HRLAlgorithms: 4b768da558f2ce4c0edb561fed1bd9e20d9134dc
+  HRLClassifier: '04549778d20f770922a3773a2f90b9c3f75135cd'
 
 PODFILE CHECKSUM: 17d030c56d744624ca7ae14883b5424ddbe5565b
 
