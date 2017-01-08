@@ -11,31 +11,24 @@ import XCTest
 @testable import HRLClassifier
 
 class ClassifierTest: XCTestCase {
-    let sut = Classifier()
+    let trainedKNNClassifier = TestDoubleTrainedKNNClassifier()
 
-    func testEmptyDataFrame_train_throwError() {
-        // given
-        let dataFrame = DataFrame()
+    var sut: Classifier!
 
-        // when / then
-        XCTAssertThrowsError(try sut.train(with: dataFrame))
+    override func setUp() {
+        super.setUp()
+
+        sut = Classifier(trainedKNNClassifier: trainedKNNClassifier)
     }
 
-    func testNonTrainedSut_predictedWorkingOut_returnUnknown() {
+    func testAnyRecord_predictedWorkingOut_forwardToTrainedKNNClassifier() {
+        // given
+        let record = HelperRecord.anyRecord()
+
         // when
-        let result = sut.predictedWorkingOut(for: anyRecord())
+        _ = sut.predictedWorkingOut(for: record)
 
         // then
-        XCTAssertEqual(result, .unknown)
-    }
-}
-
-private extension ClassifierTest {
-    enum Constants {
-        static let anyBPM = Float(50)
-    }
-
-    func anyRecord() -> Record {
-        return Record(date: Date(), bpm: Constants.anyBPM)
+        XCTAssertEqual(trainedKNNClassifier.predictedClassCount, 1)
     }
 }

@@ -14,7 +14,7 @@ import XCTest
 class RecordTest: XCTestCase {
     func testAnyDateAndAnyBPM_init_createVectorWithExpectedNumberOfValues() {
         // given
-        let date = RecordTest.anyDate()
+        let date = Date()
         let bpm = Constants.anyBPM
 
         // when
@@ -26,7 +26,7 @@ class RecordTest: XCTestCase {
 
     func testAnyDateAndKnownBPM_init_createVectorWithExpectedBPMValue() {
         // given
-        let date = RecordTest.anyDate()
+        let date = Date()
         let bpm = Constants.knownBPM
 
         // when
@@ -42,10 +42,10 @@ class RecordTest: XCTestCase {
         let minute = 0
         let second = 0
         let secondsFromGMT = 0
-        let date = RecordTest.date(secondsFromGMT: secondsFromGMT,
-                                   hour: hour,
-                                   minute: minute,
-                                   second: second)
+        let date = HelperDate.makeDate(secondsFromGMT: secondsFromGMT,
+                                       hour: hour,
+                                       minute: minute,
+                                       second: second)
         let bpm = Constants.anyBPM
 
         // when
@@ -70,10 +70,10 @@ class RecordTest: XCTestCase {
         // the UTC day will be the day before. I.e. the UTC date is: 2016-12-26 23:00:00 UTC.
         let secondsFromGMT = (hour + 1) * 60 * 60
 
-        let date = RecordTest.date(secondsFromGMT: secondsFromGMT,
-                                   hour: hour,
-                                   minute: minute,
-                                   second: second)
+        let date = HelperDate.makeDate(secondsFromGMT: secondsFromGMT,
+                                       hour: hour,
+                                       minute: minute,
+                                       second: second)
         let bpm = Constants.anyBPM
 
         // when
@@ -90,15 +90,13 @@ class RecordTest: XCTestCase {
 
     func testDatesForEachWeekDay_initRecordsWithDates_eachRecordHasTheExpectedWeekdayValue() {
         // given
-        let dayInterval = TimeInterval(24 * 60 * 60)
-
-        let sunday = RecordTest.anySunday()
-        let monday = sunday.addingTimeInterval(dayInterval)
-        let tuesday = monday.addingTimeInterval(dayInterval)
-        let wednesday = tuesday.addingTimeInterval(dayInterval)
-        let thursday = wednesday.addingTimeInterval(dayInterval)
-        let friday = thursday.addingTimeInterval(dayInterval)
-        let saturday = friday.addingTimeInterval(dayInterval)
+        let sunday = HelperDate.anySunday()
+        let monday = HelperDate.nextDay(to: sunday)
+        let tuesday = HelperDate.nextDay(to: monday)
+        let wednesday = HelperDate.nextDay(to: tuesday)
+        let thursday = HelperDate.nextDay(to: wednesday)
+        let friday = HelperDate.nextDay(to: thursday)
+        let saturday = HelperDate.nextDay(to: friday)
 
         let bpm = Constants.anyBPM
 
@@ -123,15 +121,13 @@ class RecordTest: XCTestCase {
 
     func testDatesForEachWeekDay_initRecordsWithDates_createVectorsWithSameWeekDaysAsRecords() {
         // given
-        let dayInterval = TimeInterval(24 * 60 * 60)
-
-        let sunday = RecordTest.anySunday()
-        let monday = sunday.addingTimeInterval(dayInterval)
-        let tuesday = monday.addingTimeInterval(dayInterval)
-        let wednesday = tuesday.addingTimeInterval(dayInterval)
-        let thursday = wednesday.addingTimeInterval(dayInterval)
-        let friday = thursday.addingTimeInterval(dayInterval)
-        let saturday = friday.addingTimeInterval(dayInterval)
+        let sunday = HelperDate.anySunday()
+        let monday = HelperDate.nextDay(to: sunday)
+        let tuesday = HelperDate.nextDay(to: monday)
+        let wednesday = HelperDate.nextDay(to: tuesday)
+        let thursday = HelperDate.nextDay(to: wednesday)
+        let friday = HelperDate.nextDay(to: thursday)
+        let saturday = HelperDate.nextDay(to: friday)
 
         let bpm = Constants.anyBPM
 
@@ -169,43 +165,8 @@ private extension RecordTest {
         static let bpmIndex = HRLSize(2)
         static let valueCount = HRLSize(3)
 
-        static let anyBPM = Float(50)
+        static let anyBPM = HelperRecord.Constants.anyBPM
         static let knownBPM = Float(72)
-    }
-
-    static func anyDate() -> Date {
-        return Date(timeIntervalSinceReferenceDate: 0)
-    }
-
-    static func anySunday() -> Date {
-        return RecordTest.date(secondsFromGMT: 0,
-                               hour: 1,
-                               minute: 0,
-                               second: 0,
-                               year: 2017,
-                               month: 1,
-                               day: 1)
-    }
-
-    static func date(secondsFromGMT: Int,
-                     hour: Int,
-                     minute: Int,
-                     second: Int,
-                     year: Int = 2016,
-                     month: Int = 12,
-                     day: Int = 27) -> Date {
-        var calendar = Calendar(identifier: .gregorian)
-        calendar.timeZone = TimeZone(secondsFromGMT: secondsFromGMT)!
-
-        var dateComponents = DateComponents()
-        dateComponents.year = year
-        dateComponents.month = month
-        dateComponents.day = day
-        dateComponents.hour = hour
-        dateComponents.minute = minute
-        dateComponents.second = second
-
-        return calendar.date(from: dateComponents)!
     }
 
     static func timeIntervalFromMidnight(secondsFromGMT: Int,

@@ -16,7 +16,7 @@ public final class Record: NSObject {
 
         Range: 1...7, 1 = Sunday, 2 = Monday, ...
      */
-    public let weekday: Int
+    let weekday: Int
 
     fileprivate let values: [HRLValue]
 

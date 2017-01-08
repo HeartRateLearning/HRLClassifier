@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		E2A90DD1866D88145DCB96DE /* Pods_HRLClassifier_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BEB8A9CC53CD0DD5522F997 /* Pods_HRLClassifier_Tests.framework */; };
+		FF5B51C91E22C8A90035D14A /* HelperDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B51C71E22C8A90035D14A /* HelperDate.swift */; };
+		FF5B51CA1E22C8A90035D14A /* HelperRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B51C81E22C8A90035D14A /* HelperRecord.swift */; };
+		FF5B51D01E22C8CC0035D14A /* TestDoubleMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B51CC1E22C8CC0035D14A /* TestDoubleMatrix.swift */; };
+		FF5B51D11E22C8CC0035D14A /* TestDoubleMatrixSplitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B51CD1E22C8CC0035D14A /* TestDoubleMatrixSplitter.swift */; };
+		FF5B51D21E22C8CC0035D14A /* TestDoubleTrainedKNNClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B51CE1E22C8CC0035D14A /* TestDoubleTrainedKNNClassifier.swift */; };
+		FF5B51D31E22C8CC0035D14A /* TestDoubleTrainedKNNClassifierFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B51CF1E22C8CC0035D14A /* TestDoubleTrainedKNNClassifierFactory.swift */; };
+		FF5B51D51E22C8D50035D14A /* ClassifierFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B51D41E22C8D50035D14A /* ClassifierFactoryTest.swift */; };
 		FFA999281E1466EF00BFDD09 /* DataFrameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA999251E1466EF00BFDD09 /* DataFrameTest.swift */; };
 		FFA999291E1466EF00BFDD09 /* RecordTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA999261E1466EF00BFDD09 /* RecordTest.swift */; };
 		FFA9992A1E1466EF00BFDD09 /* WorkingOutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA999271E1466EF00BFDD09 /* WorkingOutTest.swift */; };
@@ -23,6 +30,13 @@
 		A3CD24E10649C2071C8E1F44 /* HRLClassifier.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HRLClassifier.podspec; path = ../HRLClassifier.podspec; sourceTree = "<group>"; };
 		BFF68A35DA9BC3940B685B15 /* Pods-HRLClassifier_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRLClassifier_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HRLClassifier_Tests/Pods-HRLClassifier_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		FE25BEE8145C8B28AF2C3C5C /* Pods-HRLClassifier_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRLClassifier_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HRLClassifier_Tests/Pods-HRLClassifier_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		FF5B51C71E22C8A90035D14A /* HelperDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperDate.swift; sourceTree = "<group>"; };
+		FF5B51C81E22C8A90035D14A /* HelperRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperRecord.swift; sourceTree = "<group>"; };
+		FF5B51CC1E22C8CC0035D14A /* TestDoubleMatrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDoubleMatrix.swift; sourceTree = "<group>"; };
+		FF5B51CD1E22C8CC0035D14A /* TestDoubleMatrixSplitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDoubleMatrixSplitter.swift; sourceTree = "<group>"; };
+		FF5B51CE1E22C8CC0035D14A /* TestDoubleTrainedKNNClassifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDoubleTrainedKNNClassifier.swift; sourceTree = "<group>"; };
+		FF5B51CF1E22C8CC0035D14A /* TestDoubleTrainedKNNClassifierFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDoubleTrainedKNNClassifierFactory.swift; sourceTree = "<group>"; };
+		FF5B51D41E22C8D50035D14A /* ClassifierFactoryTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifierFactoryTest.swift; sourceTree = "<group>"; };
 		FFA999251E1466EF00BFDD09 /* DataFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFrameTest.swift; sourceTree = "<group>"; };
 		FFA999261E1466EF00BFDD09 /* RecordTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTest.swift; sourceTree = "<group>"; };
 		FFA999271E1466EF00BFDD09 /* WorkingOutTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingOutTest.swift; sourceTree = "<group>"; };
@@ -80,6 +94,9 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				FF5B51C61E22C8990035D14A /* Helpers */,
+				FF5B51CB1E22C8B20035D14A /* TestDoubles */,
+				FF5B51D41E22C8D50035D14A /* ClassifierFactoryTest.swift */,
 				FFE8C8B41E1EF7A100338E10 /* ClassifierTest.swift */,
 				FFA999251E1466EF00BFDD09 /* DataFrameTest.swift */,
 				FFA999261E1466EF00BFDD09 /* RecordTest.swift */,
@@ -105,6 +122,26 @@
 				5FF425E95BBD0F396AA00D06 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		FF5B51C61E22C8990035D14A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FF5B51C71E22C8A90035D14A /* HelperDate.swift */,
+				FF5B51C81E22C8A90035D14A /* HelperRecord.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FF5B51CB1E22C8B20035D14A /* TestDoubles */ = {
+			isa = PBXGroup;
+			children = (
+				FF5B51CC1E22C8CC0035D14A /* TestDoubleMatrix.swift */,
+				FF5B51CD1E22C8CC0035D14A /* TestDoubleMatrixSplitter.swift */,
+				FF5B51CE1E22C8CC0035D14A /* TestDoubleTrainedKNNClassifier.swift */,
+				FF5B51CF1E22C8CC0035D14A /* TestDoubleTrainedKNNClassifierFactory.swift */,
+			);
+			path = TestDoubles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,9 +265,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF5B51D11E22C8CC0035D14A /* TestDoubleMatrixSplitter.swift in Sources */,
+				FF5B51D01E22C8CC0035D14A /* TestDoubleMatrix.swift in Sources */,
+				FF5B51D31E22C8CC0035D14A /* TestDoubleTrainedKNNClassifierFactory.swift in Sources */,
+				FF5B51D51E22C8D50035D14A /* ClassifierFactoryTest.swift in Sources */,
+				FF5B51D21E22C8CC0035D14A /* TestDoubleTrainedKNNClassifier.swift in Sources */,
 				FFE8C8B51E1EF7A100338E10 /* ClassifierTest.swift in Sources */,
+				FF5B51C91E22C8A90035D14A /* HelperDate.swift in Sources */,
 				FFA9992A1E1466EF00BFDD09 /* WorkingOutTest.swift in Sources */,
 				FFA999281E1466EF00BFDD09 /* DataFrameTest.swift in Sources */,
+				FF5B51CA1E22C8A90035D14A /* HelperRecord.swift in Sources */,
 				FFA999291E1466EF00BFDD09 /* RecordTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

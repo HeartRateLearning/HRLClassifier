@@ -95,6 +95,7 @@
 		F5C43424B04475F102C5A6064E263CDE /* LNKFastObjects.h in Headers */ = {isa = PBXBuildFile; fileRef = 207CCC4AA9E8CC3D7A71628DAC2D404A /* LNKFastObjects.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		F83FF60EFA4A24887043CE115C41D40A /* LNKRegularizationConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 52557547A296313F48C8012336AB7982 /* LNKRegularizationConfiguration.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FAB20FB4A20E2E595F457D388FFA8154 /* LNKKNNClassifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 84185BD5AFE6DF0CFB282ADE897D76A5 /* LNKKNNClassifier.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FF5B51C51E22C8790035D14A /* ClassifierFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B51C41E22C8790035D14A /* ClassifierFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,7 +146,7 @@
 		29B39DC252028F58741F3B07DEFE03E6 /* DataFrame.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DataFrame.swift; sourceTree = "<group>"; };
 		3118131A494965AA8F577BCCE903FE7D /* HRLAlgorithms-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HRLAlgorithms-dummy.m"; sourceTree = "<group>"; };
 		347B175CC503BCECE981EA2D9DB03611 /* LNKFastObjects.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LNKFastObjects.m; path = HRLAlgorithms/Submodules/LearnKit/LearnKit/Core/LNKFastObjects.m; sourceTree = "<group>"; };
-		3E34101223BF29EE7B0D5B9D51F8B1B2 /* HRLAlgorithms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HRLAlgorithms.framework; path = HRLAlgorithms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E34101223BF29EE7B0D5B9D51F8B1B2 /* HRLAlgorithms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HRLAlgorithms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E53FD95FAD948BD37D85D3B250BA085 /* fmincg.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = fmincg.m; path = HRLAlgorithms/Submodules/LearnKit/fmincg/fmincg.m; sourceTree = "<group>"; };
 		428A8036EF364554B128F3F6084679CA /* HRLLearnKitMatrixFactory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HRLLearnKitMatrixFactory.m; path = HRLAlgorithms/Classes/Common/Private/HRLLearnKitMatrixFactory.m; sourceTree = "<group>"; };
 		43FF9D45AAE15AD76DC75C4DDFF8A866 /* HRLClassifier.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HRLClassifier.xcconfig; sourceTree = "<group>"; };
@@ -170,7 +171,7 @@
 		77438D14B44A4BC62D9FAE1A72BA3FE5 /* LNKMatrixPCA.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LNKMatrixPCA.h; path = HRLAlgorithms/Submodules/LearnKit/LearnKit/Core/LNKMatrixPCA.h; sourceTree = "<group>"; };
 		7C52892ACCD4745445D7D33F972A9F1B /* Config.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Config.h; path = HRLAlgorithms/Submodules/LearnKit/LearnKit/Config.h; sourceTree = "<group>"; };
 		7D8AE0E739B57406A51DB574B9D5C0B2 /* Classifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
-		7DA2C09FECA1D91FF864FC4FDE64EDAE /* HRLClassifier.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = HRLClassifier.modulemap; sourceTree = "<group>"; };
+		7DA2C09FECA1D91FF864FC4FDE64EDAE /* HRLClassifier.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = HRLClassifier.modulemap; sourceTree = "<group>"; };
 		7F589694E915AEF9D48512CDFB758470 /* HRLClassifier-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HRLClassifier-dummy.m"; sourceTree = "<group>"; };
 		84185BD5AFE6DF0CFB282ADE897D76A5 /* LNKKNNClassifier.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LNKKNNClassifier.m; path = "HRLAlgorithms/Submodules/LearnKit/LearnKit/K-NN/LNKKNNClassifier.m"; sourceTree = "<group>"; };
 		85009FDD01132544539F4B354C03542D /* LNKMatrix+HRLMatrix.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "LNKMatrix+HRLMatrix.m"; path = "HRLAlgorithms/Classes/Common/Private/LNKMatrix+HRLMatrix.m"; sourceTree = "<group>"; };
@@ -185,16 +186,16 @@
 		8F9ED2A9FB10211FF21AC17E86442336 /* LNKUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LNKUtilities.m; path = HRLAlgorithms/Submodules/LearnKit/LearnKit/Core/LNKUtilities.m; sourceTree = "<group>"; };
 		9187B56D00BB2C80B3662FB7ECAA72A9 /* LNKPredictorPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LNKPredictorPrivate.h; path = HRLAlgorithms/Submodules/LearnKit/LearnKit/Core/LNKPredictorPrivate.h; sourceTree = "<group>"; };
 		92509D7E9F0B6CE13FBDFA1A85BE10E4 /* LNKCSVColumnRule.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LNKCSVColumnRule.h; path = HRLAlgorithms/Submodules/LearnKit/LearnKit/Core/LNKCSVColumnRule.h; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		93CA5658ECFF7270506D999DD5941D59 /* HRLClassifier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HRLClassifier.framework; path = HRLClassifier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		93D2342665E0705288ED5BF49FB088CB /* Pods_HRLClassifier_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HRLClassifier_Tests.framework; path = "Pods-HRLClassifier_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93CA5658ECFF7270506D999DD5941D59 /* HRLClassifier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HRLClassifier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93D2342665E0705288ED5BF49FB088CB /* Pods_HRLClassifier_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HRLClassifier_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95200EA63A751274A800D39262C75A3F /* HRLMatrixSplitter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HRLMatrixSplitter.m; path = HRLAlgorithms/Classes/Common/HRLMatrixSplitter.m; sourceTree = "<group>"; };
 		97351CABBF76D7B5656F73582C25AACC /* HRLTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HRLTypes.h; path = HRLAlgorithms/Classes/Common/HRLTypes.h; sourceTree = "<group>"; };
 		9CF93ED8B25D76BD4ADF8301F0C150AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		A5AF732E8F5D4EB48652BC93D99FF0B3 /* Pods-HRLClassifier_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HRLClassifier_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		A73A5657733CE199FD053DEB0FE35F11 /* _LNKKNNClassifierAC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _LNKKNNClassifierAC.h; path = "HRLAlgorithms/Submodules/LearnKit/LearnKit/K-NN/_LNKKNNClassifierAC.h"; sourceTree = "<group>"; };
 		B0B82D5B1AC7BC9B6A84A3E71443F6A3 /* LNKClasses.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LNKClasses.m; path = HRLAlgorithms/Submodules/LearnKit/LearnKit/Core/LNKClasses.m; sourceTree = "<group>"; };
-		B452349D6DD520E7FF9B65DBA1F2DFE7 /* HRLAlgorithms.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = HRLAlgorithms.modulemap; sourceTree = "<group>"; };
+		B452349D6DD520E7FF9B65DBA1F2DFE7 /* HRLAlgorithms.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = HRLAlgorithms.modulemap; sourceTree = "<group>"; };
 		B6C14B98D6CA92040A895CCFA22E6867 /* LNKAccelerate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LNKAccelerate.h; path = "HRLAlgorithms/Submodules/LearnKit/LearnKit/Accelerate Extensions/LNKAccelerate.h"; sourceTree = "<group>"; };
 		B7CAC80E904854D0EE368D4FA39A1037 /* Pods-HRLClassifier_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HRLClassifier_Tests-resources.sh"; sourceTree = "<group>"; };
 		B7FDAA96DB00051390D98CF29A57EA40 /* LNKMatrixCSV.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LNKMatrixCSV.m; path = HRLAlgorithms/Submodules/LearnKit/LearnKit/Core/LNKMatrixCSV.m; sourceTree = "<group>"; };
@@ -222,12 +223,13 @@
 		E1A6423FB15110AAC7ACA8447A1CCFD2 /* HRLSplittedMatrix.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HRLSplittedMatrix.m; path = HRLAlgorithms/Classes/Common/HRLSplittedMatrix.m; sourceTree = "<group>"; };
 		E1C987A49F386E48DA7D81C4B4F25DC9 /* LNKKNNClassifier+HRLTrainedKNNClassifier.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "LNKKNNClassifier+HRLTrainedKNNClassifier.m"; path = "HRLAlgorithms/Classes/K-NN/Private/LNKKNNClassifier+HRLTrainedKNNClassifier.m"; sourceTree = "<group>"; };
 		E63FD39ACBE2EE1B0FBFE42C2EF73FB1 /* LNKTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LNKTypes.h; path = HRLAlgorithms/Submodules/LearnKit/LearnKit/Core/LNKTypes.h; sourceTree = "<group>"; };
-		E86047741B6FA71CEF262093FDE0F1CE /* Pods-HRLClassifier_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-HRLClassifier_Tests.modulemap"; sourceTree = "<group>"; };
+		E86047741B6FA71CEF262093FDE0F1CE /* Pods-HRLClassifier_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-HRLClassifier_Tests.modulemap"; sourceTree = "<group>"; };
 		E9472BC84B7ED7D85C6C7664C3F9793B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFB265199E10D8907B9900E46F49E22B /* Pods-HRLClassifier_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HRLClassifier_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		F1DCBA342AC0895EBE09764679D94DAA /* LNKMatrixPCA.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LNKMatrixPCA.m; path = HRLAlgorithms/Submodules/LearnKit/LearnKit/Core/LNKMatrixPCA.m; sourceTree = "<group>"; };
 		F437BC88B865C39B57E1567972B62DBA /* LNKKNNClassifier+HRLTrainedKNNClassifier.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LNKKNNClassifier+HRLTrainedKNNClassifier.h"; path = "HRLAlgorithms/Classes/K-NN/Private/LNKKNNClassifier+HRLTrainedKNNClassifier.h"; sourceTree = "<group>"; };
 		F5FA2E0DC7BCEE0482331B759824B13D /* LNKAccelerate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LNKAccelerate.m; path = "HRLAlgorithms/Submodules/LearnKit/LearnKit/Accelerate Extensions/LNKAccelerate.m"; sourceTree = "<group>"; };
+		FF5B51C41E22C8790035D14A /* ClassifierFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifierFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,7 +274,6 @@
 			children = (
 				56E5B794B32BC4569549F2B0D24136F7 /* Classes */,
 			);
-			name = HRLClassifier;
 			path = HRLClassifier;
 			sourceTree = "<group>";
 		};
@@ -369,7 +370,6 @@
 				8F9ED2A9FB10211FF21AC17E86442336 /* LNKUtilities.m */,
 				1BA61CBE33E6B8507E920D9857549115 /* Support Files */,
 			);
-			name = HRLAlgorithms;
 			path = HRLAlgorithms;
 			sourceTree = "<group>";
 		};
@@ -387,11 +387,11 @@
 			isa = PBXGroup;
 			children = (
 				7D8AE0E739B57406A51DB574B9D5C0B2 /* Classifier.swift */,
+				FF5B51C41E22C8790035D14A /* ClassifierFactory.swift */,
 				29B39DC252028F58741F3B07DEFE03E6 /* DataFrame.swift */,
 				5B8E726D78BB86BA2E8718A7462B48BA /* Record.swift */,
 				664D39E68100478A4B081EAD5B61BDDA /* WorkingOut.swift */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -617,6 +617,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					251451B5B13D7CBAFEE9B0B331F6760D = {
+						LastSwiftMigration = 0820;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -673,6 +678,7 @@
 				B2900451222D938AAFD5F8F6476F8AE8 /* LNKPredictor.m in Sources */,
 				F83FF60EFA4A24887043CE115C41D40A /* LNKRegularizationConfiguration.m in Sources */,
 				368C693224962005FCFEE0ED32409652 /* LNKTypes.m in Sources */,
+				FF5B51C51E22C8790035D14A /* ClassifierFactory.swift in Sources */,
 				5DFF654B31D1C4DDC58BD792AA9B28A5 /* LNKUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -826,6 +832,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4E139D5176728BB7556217414577FA42 /* HRLAlgorithms.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -898,6 +905,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4E139D5176728BB7556217414577FA42 /* HRLAlgorithms.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -919,6 +927,7 @@
 				PRODUCT_NAME = HRLAlgorithms;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
