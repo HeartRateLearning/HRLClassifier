@@ -156,6 +156,18 @@ class RecordTest: XCTestCase {
         XCTAssertEqual(Double(saturdayRecord.weekday),
                        saturdayRecord.value(at: Constants.weekDayIndex))
     }
+
+    func testArchivedRecord_initWithCoder_returnRecordEqualToOriginal() {
+        // given
+        let originalRecord = HelperRecord.anyRecord()
+        let archivedRecord = NSKeyedArchiver.archivedData(withRootObject: originalRecord)
+
+        // wnen
+        let record = NSKeyedUnarchiver.unarchiveObject(with: archivedRecord)
+
+        // then
+        XCTAssertEqual(record  as! Record, originalRecord)
+    }
 }
 
 private extension RecordTest {

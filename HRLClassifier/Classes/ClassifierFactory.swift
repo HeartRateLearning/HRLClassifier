@@ -9,12 +9,16 @@
 import Foundation
 import HRLAlgorithms
 
+// MARK: - Error types
+
 /// Possible errors while making a new `Classifier`.
 public enum ClassifierFactoryError: Error {
     /// Provided `DataFrame` did not have enough data to create a `Classifier`
     /// able to make accurate predictions.
     case insufficientData
 }
+
+// MARK: - Protocol definitions
 
 /// Factory to make a `Classifier`
 public protocol ClassifierFactoryProtocol {
@@ -33,10 +37,16 @@ public protocol ClassifierFactoryProtocol {
     func makeClassifier(with dataFrame: DataFrame) throws -> ClassifierProtocol
 }
 
+// MARK: - Properties & public methods
+
 /// Implementation of protocol: `ClassifierFactoryProtocol`
 public final class ClassifierFactory {
+    // MARK: - Private properties
+
     fileprivate let splitter: HRLMatrixSplitterProtocol
     fileprivate let factory: HRLTrainedKNNClassifierFactoryProtocol
+
+    // MARK: - Init methods
 
     /**
         Initializes a factory.
@@ -62,6 +72,8 @@ public final class ClassifierFactory {
     }
 }
 
+// MARK: - ClassifierFactoryProtocol methods
+
 extension ClassifierFactory: ClassifierFactoryProtocol {
     public func makeClassifier(with dataFrame: DataFrame) throws -> ClassifierProtocol {
         let trainedKNNClassifier = try makeTrainedKNNClassifier(with: dataFrame)
@@ -69,6 +81,8 @@ extension ClassifierFactory: ClassifierFactoryProtocol {
         return Classifier(trainedKNNClassifier: trainedKNNClassifier)
     }
 }
+
+// MARK: - Private methods
 
 private extension ClassifierFactory {
     enum Constants {
