@@ -29,7 +29,7 @@ public final class Record: NSObject {
 
     fileprivate static let calendar = defaultCalendar()
 
-    // MARK: - Init
+    // MARK: - Init methods
 
     /**
         Initializes a new heart rate record.

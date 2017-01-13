@@ -27,6 +27,21 @@ class DataFrameTest: XCTestCase {
         XCTAssertEqual(dataFrame.columnCount(), 0)
     }
 
+    func testArchivedDataFrame_initWithCoder_returnDataFrameEqualToOriginal() {
+        // given
+        let orgDataFrame = DataFrame()
+        orgDataFrame.append(record: HelperRecord.anyRecord(), isWorkingOut: true)
+        orgDataFrame.append(record: HelperRecord.anyRecord(), isWorkingOut: false)
+
+        let archDataFrame = NSKeyedArchiver.archivedData(withRootObject: orgDataFrame)
+
+        // when
+        let dataFrame = NSKeyedUnarchiver.unarchiveObject(with: archDataFrame)
+
+        // then
+        XCTAssertEqual(dataFrame  as! DataFrame, orgDataFrame)
+    }
+
     func testDataFrameWithAppendedWorkingOutToTrue_classForRow_returnWorkingOutTrue() {
         // given
         let dataFrame = DataFrame()
