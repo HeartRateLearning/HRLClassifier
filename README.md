@@ -24,26 +24,33 @@ pod "HRLClassifier"
 ```swift
 import HRLClassifier
 
+let filename = "/path/to/archive"
+
 let baseDate = Date(timeIntervalSinceReferenceDate: 0)
 let dayInterval = 24 * 60 * 60
 let maxBPM = 200
 
 // Fill data frame
-let dataFrame = DataFrame()
+var auxDataFrame = NSKeyedUnarchiver.unarchiveObject(withFile: filename) as? DataFrame
+if auxDataFrame == nil {
+    auxDataFrame = DataFrame()
 
-for i in 0..<7 {
-    for _ in 0..<80 {
-        let timeInterval = i * dayInterval + Int(arc4random_uniform(UInt32(dayInterval)))
+    for i in 0..<7 {
+        for _ in 0..<80 {
+            let timeInterval = i * dayInterval + Int(arc4random_uniform(UInt32(dayInterval)))
 
-        let date = baseDate.addingTimeInterval(TimeInterval(timeInterval))
-        let bpm = Float(arc4random_uniform(UInt32(maxBPM)))
-        let record = Record(date: date, bpm: bpm)
+            let date = baseDate.addingTimeInterval(TimeInterval(timeInterval))
+            let bpm = Float(arc4random_uniform(UInt32(maxBPM)))
+            let record = Record(date: date, bpm: bpm)
 
-        let isWorkingOut = arc4random_uniform(2) == 1 ? true : false
+            let isWorkingOut = arc4random_uniform(2) == 1 ? true : false
 
-        dataFrame.append(record: record, isWorkingOut: isWorkingOut)
+            auxDataFrame!.append(record: record, isWorkingOut: isWorkingOut)
+        }
     }
 }
+
+let dataFrame = auxDataFrame!
 
 // Make classifier
 guard let classifier = try? ClassifierFactory().makeClassifier(with: dataFrame) else {
@@ -51,6 +58,9 @@ guard let classifier = try? ClassifierFactory().makeClassifier(with: dataFrame) 
 
     return
 }
+
+// Archive data frame
+NSKeyedArchiver.archiveRootObject(dataFrame, toFile: filename)
 
 // Predict
 let date = baseDate.addingTimeInterval(TimeInterval(7 * dayInterval))
