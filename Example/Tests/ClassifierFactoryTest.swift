@@ -33,7 +33,7 @@ class ClassifierFactoryTest: XCTestCase {
         let dataFrame = emptyDataFrame()
 
         // when / then
-        XCTAssertThrowsError(try sut.makeClassifier(with: dataFrame))
+        XCTAssertThrowsError(try sut.makeClassifier(dataFrame: dataFrame))
     }
 
     func testNonEmptyDataFrame_makeClassifier_splitDataFrame() {
@@ -41,7 +41,7 @@ class ClassifierFactoryTest: XCTestCase {
         let dataFrame = nonEmptyDataFrame()
 
         // when
-        _ = try? sut.makeClassifier(with: dataFrame)
+        _ = try? sut.makeClassifier(dataFrame: dataFrame)
 
         // then
         XCTAssertEqual(splitter.splittedMatrixCount, 1)
@@ -52,7 +52,7 @@ class ClassifierFactoryTest: XCTestCase {
         let dataFrame = nonEmptyDataFrame()
 
         // when
-        _ = try? sut.makeClassifier(with: dataFrame)
+        _ = try? sut.makeClassifier(dataFrame: dataFrame)
 
         // then
         XCTAssertEqual(factory.makeTrainedKNNClassifierCount, 1)
@@ -63,7 +63,7 @@ class ClassifierFactoryTest: XCTestCase {
         let dataFrame = nonEmptyDataFrame()
 
         // when
-        _ = try? sut.makeClassifier(with: dataFrame)
+        _ = try? sut.makeClassifier(dataFrame: dataFrame)
 
         // then
         XCTAssertEqual(trainedKNNClassifier.estimatedAccuracyCount, 1)
@@ -75,7 +75,7 @@ class ClassifierFactoryTest: XCTestCase {
         trainedKNNClassifier.estimatedAccuracyResult = Constants.lowAccuracy
 
         // when / then
-        XCTAssertThrowsError(try sut.makeClassifier(with: dataFrame))
+        XCTAssertThrowsError(try sut.makeClassifier(dataFrame: dataFrame))
     }
 }
 

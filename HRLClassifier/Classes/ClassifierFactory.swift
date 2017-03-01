@@ -34,7 +34,7 @@ public protocol ClassifierFactoryProtocol {
               not have enough data so it was not possible to create a `Classifier` able
               to make accurate predictions.
      */
-    func makeClassifier(with dataFrame: DataFrame) throws -> ClassifierProtocol
+    func makeClassifier(dataFrame: DataFrame) throws -> ClassifierProtocol
 }
 
 // MARK: - Properties & public methods
@@ -75,7 +75,7 @@ public final class ClassifierFactory {
 // MARK: - ClassifierFactoryProtocol methods
 
 extension ClassifierFactory: ClassifierFactoryProtocol {
-    public func makeClassifier(with dataFrame: DataFrame) throws -> ClassifierProtocol {
+    public func makeClassifier(dataFrame: DataFrame) throws -> ClassifierProtocol {
         let trainedKNNClassifier = try makeTrainedKNNClassifier(with: dataFrame)
 
         return Classifier(trainedKNNClassifier: trainedKNNClassifier)
