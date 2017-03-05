@@ -53,7 +53,7 @@ if auxDataFrame == nil {
 let dataFrame = auxDataFrame!
 
 // Make classifier
-guard let classifier = try? ClassifierFactory().makeClassifier(with: dataFrame) else {
+guard let classifier = try? ClassifierFactory().makeClassifier(dataFrame: dataFrame) else {
     print("Given that all records are created in a random fashion, this is expected")
 
     return
