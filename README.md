@@ -3,6 +3,7 @@
 [![CI Status](https://travis-ci.org/HeartRateLearning/HRLClassifier.svg?branch=master)](https://travis-ci.org/HeartRateLearning/HRLClassifier)
 [![codecov.io](https://codecov.io/github/HeartRateLearning/HRLClassifier/coverage.svg?branch=master)](https://codecov.io/github/HeartRateLearning/HRLClassifier?branch=master)
 [![Version](https://img.shields.io/cocoapods/v/HRLClassifier.svg?style=flat)](http://cocoapods.org/pods/HRLClassifier)
+[![Docs](https://img.shields.io/cocoapods/metrics/doc-percent/HRLClassifier.svg)](http://cocoadocs.org/docsets/HRLClassifier)
 
 Use Machine Learning to predict if a person is working out based of his/her heart rate.
 
