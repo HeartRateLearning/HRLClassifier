@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
   s.name             = 'HRLClassifier'
-  s.version          = '3.0.1'
-  s.summary          = 'Use Machine Learning to predict if a person is working out based of his/her heart rate.'
+  s.version          = '3.0.2'
+  s.summary          = '(DEPRECATED) Use Machine Learning to predict if a person is working out based of his/her heart rate.'
 
   s.description      = <<-DESC
-Use Machine Learning to predict if a person is working out based of his/her heart rate.
+(DEPRECATED) Use Machine Learning to predict if a person is working out based of his/her heart rate.
                        DESC
 
   s.homepage         = 'https://github.com/HeartRateLearning/HRLClassifier'
